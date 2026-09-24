@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<title>重走长征路｜沉浸式历史课堂 5.0</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#07101d;color:#edf4ff}
+body{overflow-x:hidden}.app{min-height:100vh;background:radial-gradient(circle at 80% 10%,#19365d 0,transparent 32%),linear-gradient(145deg,#07101d,#0b1626 55%,#111b2b)}
+button{font:inherit}.screen{display:none;min-height:100vh}.screen.active{display:block}
+.cover{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:32px}
+.stars,.stars:before,.stars:after{position:absolute;inset:0;content:"";background-image:radial-gradient(circle,#fff 1px,transparent 1.5px);background-size:87px 87px;opacity:.13;animation:drift 24s linear infinite}
+.stars:before{background-size:131px 131px;opacity:.1;animation-duration:37s}.stars:after{background-size:211px 211px;opacity:.08;animation-duration:53s}
+@keyframes drift{to{transform:translate3d(-90px,70px,0)}}.hero{position:relative;z-index:2;width:min(900px,100%);text-align:center}
+.kicker{letter-spacing:.28em;color:#e4b76b;font-size:13px}.hero h1{font-size:clamp(38px,9vw,82px);margin:18px 0 8px;line-height:1.05}.hero h2{font-weight:400;color:#aebdd0;font-size:clamp(17px,3vw,25px);margin:0 0 28px}.hero p{max-width:650px;margin:0 auto 34px;color:#b9c7d8;line-height:1.9}
+.primary{border:0;border-radius:999px;padding:15px 30px;background:linear-gradient(135deg,#d89a43,#f0c16e);color:#17120b;font-weight:800;box-shadow:0 10px 35px #0006;cursor:pointer}.ghost{border:1px solid #ffffff25;background:#ffffff08;color:#eaf2ff;border-radius:999px;padding:12px 20px;cursor:pointer}
+.topbar{position:sticky;top:0;z-index:20;background:#07101dcc;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff12;padding:12px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between}.brand{font-weight:800}.brand small{display:block;color:#8fa1b8;font-weight:400;font-size:10px;margin-top:2px}.topstats{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.pill{padding:7px 10px;border-radius:999px;background:#ffffff0d;color:#b8c7da;font-size:12px;border:1px solid #ffffff10}
+.wrap{width:min(1180px,calc(100% - 24px));margin:auto}.dashboard{padding:18px 0 60px}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.card{background:linear-gradient(145deg,#ffffff0c,#ffffff04);border:1px solid #ffffff12;border-radius:22px;box-shadow:0 18px 50px #0003;overflow:hidden}.card h3{margin:0}.map{position:relative;min-height:620px;background:radial-gradient(circle at 25% 75%,#294463 0,transparent 27%),radial-gradient(circle at 75% 25%,#213b59 0,transparent 30%),#0a1524}.map svg{position:absolute;inset:40px 20px 50px;width:calc(100% - 40px);height:calc(100% - 90px)}.route{fill:none;stroke:#d5a65c;stroke-width:5;stroke-linecap:round;stroke-dasharray:9 9;filter:drop-shadow(0 0 7px #d5a65c55)}.node{cursor:pointer}.node circle{fill:#101d2d;stroke:#e7b55f;stroke-width:3}.node.active circle{fill:#e7b55f}.node text{fill:#dbe8f7;font-size:12px}.traveler{fill:#fff;stroke:#d99d49;stroke-width:3;filter:drop-shadow(0 0 10px #d99d49)}.maptitle{position:absolute;left:22px;top:20px}.maptitle b{font-size:23px}.maptitle span{display:block;color:#8296ad;font-size:12px;margin-top:4px}.hint{position:absolute;left:22px;bottom:18px;color:#8194ab;font-size:12px}
+.side{display:flex;flex-direction:column;gap:16px}.panel{padding:20px}.panel .eyebrow{color:#d7a458;font-size:11px;letter-spacing:.16em}.panel h2{margin:8px 0 8px;font-size:26px}.panel p{color:#aebed0;line-height:1.75;font-size:14px}.progress{height:8px;background:#ffffff0d;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,#bd7b2e,#f0c16e);width:0%;transition:.5s}.timeline{display:flex;gap:7px;overflow:auto;padding:3px 0 10px}.dot{flex:0 0 auto;width:35px;height:35px;border-radius:50%;border:1px solid #ffffff18;background:#ffffff07;color:#9fb0c3;font-size:11px;cursor:pointer}.dot.done{background:#b47c35;color:#fff}.dot.current{border-color:#f1c26c;box-shadow:0 0 0 4px #dba65b22}
+.event{display:none}.event.active{display:block}.eventhead{padding:24px 20px 10px}.date{color:#d9a55b;font-size:12px}.event h1{font-size:32px;margin:6px 0}.event .lead{color:#b4c4d6;line-height:1.8}.tabs{display:flex;gap:6px;padding:12px 20px;border-top:1px solid #ffffff0c;border-bottom:1px solid #ffffff0c;overflow:auto}.tab{white-space:nowrap;border:1px solid #ffffff12;background:#ffffff06;color:#aebed0;border-radius:10px;padding:9px 12px;cursor:pointer}.tab.active{background:#d9a55b;color:#17120b;border-color:#d9a55b}.tabbody{padding:16px 20px;line-height:1.85;color:#c3cfdd;font-size:14px;min-height:170px}.quiz{margin:0 20px 20px;padding:16px;border-radius:16px;background:#00000018;border:1px solid #ffffff0d}.quiz b{display:block;margin-bottom:12px}.option{display:block;width:100%;text-align:left;padding:11px 12px;margin:7px 0;border-radius:10px;border:1px solid #ffffff12;background:#ffffff06;color:#dce8f5;cursor:pointer}.option.correct{border-color:#72c99b;background:#72c99b20}.option.wrong{border-color:#e37c7c;background:#e37c7c15}.footer-actions{display:flex;gap:8px;padding:0 20px 22px}.modal{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:18px;z-index:50}.modal.show{display:flex}.modalbox{width:min(760px,100%);max-height:90vh;overflow:auto;background:#0d1929;border:1px solid #ffffff15;border-radius:22px;padding:22px;box-shadow:0 30px 90px #0009}.modalbox h2{margin-top:0}.reportgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.reportstat{padding:16px;border-radius:16px;background:#ffffff08;text-align:center}.reportstat strong{display:block;font-size:28px;color:#efc06a}.small{color:#8194aa;font-size:12px;line-height:1.7}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.map{min-height:470px}.side{order:-1}.hero{padding-top:30px}.reportgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.map{min-height:420px}.map svg{inset:35px 8px 45px;width:calc(100% - 16px);height:calc(100% - 80px)}.node text{font-size:9px}.event h1{font-size:27px}.topstats .pill:nth-child(2){display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<section id="cover" class="screen active cover">
+  <div class="stars"></div>
+  <div class="hero">
+    <div class="kicker">1934—1936 · 大学生课程设计 · 5.0</div>
+    <h1>重走长征路</h1>
+    <h2>沉浸式数字历史课堂</h2>
+    <p>从第一视角出发，沿着历史路线探索重大事件。点击节点进入课堂，通过史料、观察证据与思考任务理解长征历史。</p>
+    <button class="primary" onclick="enter()">开始重走</button>
+    <button class="ghost" style="margin-left:8px" onclick="showTeacher()">课程设计说明</button>
+  </div>
+</section>
+
+<section id="main" class="screen">
+<header class="topbar">
+  <div class="brand">重走长征路 <small>沉浸式历史课堂 5.0</small></div>
+  <div class="topstats"><span class="pill" id="progressPill">探索 0%</span><span class="pill" id="scorePill">得分 0</span><button class="ghost" onclick="showReport()">学习报告</button></div>
+</header>
+<div class="wrap dashboard">
+  <div class="grid">
+    <div class="card map">
+      <div class="maptitle"><b>长征路线探索图</b><span>点击节点进入历史现场</span></div>
+      <svg viewBox="0 0 760 560" aria-label="长征路线示意图">
+        <path class="route" d="M90 475 C150 430 130 380 200 350 S270 300 255 245 S310 175 370 205 S430 280 470 225 S545 150 585 105 S650 80 690 55"/>
+        <g id="nodes"></g><circle id="traveler" class="traveler" r="9" cx="90" cy="475"/>
+      </svg>
+      <div class="hint">路线为教学示意图，不按地理比例绘制 · 史实日期以资料为准</div>
+    </div>
+    <div class="side">
+      <div class="card panel">
+        <div class="eyebrow">LEARNING PROGRESS</div>
+        <h2>你的重走进度</h2>
+        <p id="welcome">沿路线选择一个节点开始学习。</p>
+        <div class="progress"><i id="bar"></i></div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px" class="small"><span id="doneText">0 / 15 个节点</span><span id="scoreSmall">0 分</span></div>
+      </div>
+      <div class="card panel">
+        <div class="eyebrow">TIME AXIS</div>
+        <h3 style="margin:7px 0 12px">1934 → 1936</h3>
+        <div class="timeline" id="timeline"></div>
+      </div>
+      <div class="card event" id="eventCard">
+        <div class="eventhead"><div class="date" id="evDate"></div><h1 id="evTitle"></h1><div class="lead" id="evLead"></div></div>
+        <div class="tabs" id="tabs"></div>
+        <div class="tabbody" id="tabbody"></div>
+        <div class="quiz">
+          <b id="question"></b><div id="options"></div><div id="feedback" class="small"></div>
+        </div>
+        <div class="footer-actions"><button class="primary" onclick="completeNode()">完成本节点</button><button class="ghost" onclick="nextNode()">下一个节点 →</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="modal" id="modal"><div class="modalbox" id="modalbox"></div></div>
+</div>
+<script>
+const events=[
+["于都出发","1934.10","中央红军主力从江西于都等地集结出发，开始战略转移。","战略转移的开始","出发是长征叙事的起点。教学时可结合路线图、行军资料与当事人回忆，理解当时红军面临的军事环境。","观察路线","于都位于赣南，是中央红军长征出发的重要地点。","课堂思考","为什么“战略转移”需要与当时的战争形势结合起来理解？","长征从哪里开始？","于都等地","瑞金","遵义","陕北",0],
+["湘江战役","1934.11—12","中央红军突破国民党军设置的第四道封锁线，湘江战役成为长征初期的重要战役。","突破封锁线","湘江战役发生于1934年11月至12月。教学可关注部队损失、渡江与突围等历史信息，并讨论战略决策的影响。","史料核对","湘江战役是中央红军长征初期的重要战役节点。具体数字应以所选权威史料版本为准。","课堂思考","重大军事行动中的决策会怎样影响后续行军？","湘江战役发生在长征的哪个阶段？","初期","结束后","陕北阶段","会师后",0],
+["通道会议","1934.12","红军在通道等地讨论战略方向问题，成为长征途中战略调整的重要节点。","战略方向讨论","课堂可将通道、黎平、遵义等节点放在连续时间线上，帮助学生理解战略判断的变化过程。","观察证据","会议节点与行军路线相互联系，适合用时间轴和地图同步展示。","课堂思考","为什么历史学习需要把单个会议放进连续事件链？","通道会议主要涉及什么问题？","战略方向","经济建设","外交条约","农业生产",0],
+["黎平会议","1934.12","红军在黎平讨论战略行动方向，长征中的战略调整继续推进。","方向调整","与通道会议、遵义会议串联学习，可以观察红军战略判断逐步调整的过程。","史料核对","黎平会议是中央红军长征途中重要会议节点。","课堂思考","从连续会议中可以观察到怎样的决策过程？","黎平会议属于哪一时期？","1934年12月","1935年10月","1936年10月","1934年春",0],
+["遵义会议","1935.1.15—17","中共中央政治局在遵义举行扩大会议。它是长征中的重要历史转折节点。","重要转折节点","教学中应结合会议时间、地点、议题与历史背景学习，不将复杂历史过程简单化为单一事件。","史料核对","遵义会议于1935年1月15日至17日举行，是中国共产党历史上的重要会议。","课堂思考","为什么一个会议需要结合此前后的连续事件来理解？","遵义会议召开于哪一年？","1935年","1934年","1936年","1937年",0],
+["扎西会议","1935.2","遵义会议后，中央红军在扎西等地继续研究行动方向与军事部署。","继续调整行动","这一节点适合与四渡赤水一起讲授，呈现战略机动与行动调整之间的关系。","观察证据","扎西位于贵州、云南交界区域附近的历史交通线上。","课堂思考","怎样通过地图理解“机动”在军事行动中的意义？","扎西会议位于遵义会议之后吗？","是","否","无法判断","二者无关",0],
+["四渡赤水","1935.1—3","中央红军在川黔滇边境地区机动作战，四渡赤水成为长征中的重要军事行动。","机动作战","可通过动态路线动画呈现行军方向多次变化，再结合史料讨论机动作战的特点。","观察证据","四渡赤水的学习重点是行动路线、时间顺序和战略机动。","课堂思考","地图中的路线变化如何帮助理解军事机动？","四渡赤水最适合通过什么方式学习？","路线与时间线","只背人名","只看结论","只记地点",0],
+["巧渡金沙江","1935.5","中央红军渡过金沙江，摆脱了敌军围追堵截的重要危险局面。","摆脱围追堵截","金沙江节点可以与前后路线一起学习，观察自然地理条件与军事行动之间的关系。","观察证据","金沙江是长征路线中的重要自然地理节点。","课堂思考","自然地理条件会怎样影响行军与作战？","巧渡金沙江的历史意义可从哪方面理解？","摆脱围追堵截","经济改革","工业建设","外交谈判",0],
+["强渡大渡河","1935.5","中央红军继续北上，强渡大渡河是长征途中重要行动节点。","继续北上","可将大渡河与泸定桥连续呈现，帮助学生理解行军路线的空间关系。","观察证据","大渡河是长征路线中的重要河流节点。","课堂思考","为什么历史地图需要同时呈现自然地理信息？","强渡大渡河发生在哪个方向的行军过程中？","北上","南下","东进","原地驻扎",0],
+["飞夺泸定桥","1935.5","红军在大渡河上的泸定桥展开重要行动，成为长征叙事中的标志性节点。","大渡河上的重要节点","教学中应把历史事件、地理位置和史料证据结合起来，避免只停留在故事化叙述。","史料核对","泸定桥位于大渡河上，是长征路线的重要历史地点。","课堂思考","怎样区分历史事实、文学表达和后来的文化记忆？","泸定桥位于哪条河上？","大渡河","金沙江","乌江","湘江",0],
+["夹金山","1935.6","中央红军翻越夹金山等雪山，继续向北推进。","翻越大雪山","自然环境是长征体验的重要维度，可通过海拔、天气和路线示意增强空间感。","观察证据","夹金山是红军长征途中翻越的重要雪山之一。","课堂思考","自然环境如何改变行军方式和人员负荷？","夹金山属于哪类自然地理节点？","雪山","沙漠","海岛","平原",0],
+["懋功会师","1935.6","中央红军与红四方面军在懋功地区会合，长征进程出现新的阶段性变化。","与红四方面军会合","教学时可以比较不同部队的行军路线，再讨论会师后的战略问题。","史料核对","懋功会师是1935年长征路线中的重要会合节点。","课堂思考","多支队伍会合后，战略行动可能面临哪些新问题？","懋功会师发生在哪一年？","1935年","1934年","1936年","1937年",0],
+["穿越草地","1935.8","红军继续北上，穿越草地是长征途中艰苦行军的重要阶段。","继续北上","可用环境音、地图和史料摘录营造沉浸感，同时强调史实证据与叙事表达的区别。","观察证据","草地行军具有复杂自然环境与补给困难等特点。","课堂思考","在历史学习中，如何既理解艰苦环境，又避免过度故事化？","草地阶段位于长征路线的什么方向？","北上","南下","东进","海上",0],
+["吴起镇","1935.10","中央红军到达陕甘地区，吴起镇成为中央红军长征到达陕北的重要节点。","到达陕北","路线进入陕北后，课程可转向“长征阶段性结束”的讨论，并继续追踪后续会师。","史料核对","吴起镇是中央红军长征到达陕北的重要历史地点。","课堂思考","到达陕北后，长征历史叙事为什么仍然没有立即结束？","吴起镇位于哪个区域？","陕北","华南","东北","西南",0],
+["三军会师","1936.10.9 / 10.22","1936年10月，红军三大主力会师。会宁会师与将台堡会师共同构成长征胜利结束的重要历史节点。","会师与阶段性结束","课程最后可回看整条路线，从时间、空间和重大事件三个维度形成完整历史认识。","史料核对","1936年10月，红一、红二、红四方面军先后在甘肃会宁、宁夏将台堡等地会师。","课堂思考","如果只记住终点，会不会忽略长征过程中大量战略调整与艰苦行军？","三军会师发生于哪一年？","1936年","1934年","1935年","1937年",0]
+];
+let state={current:0,done:new Set(),score:0,answered:new Set(),tab:0};
+const coords=[[90,475],[135,425],[175,385],[210,345],[255,245],[290,205],[370,205],[430,280],[470,225],[520,170],[555,135],[585,105],[625,90],[660,70],[690,55]];
+function enter(){document.getElementById('cover').classList.remove('active');document.getElementById('main').classList.add('active');renderMap();openEvent(0)}
+function renderMap(){
+ const g=document.getElementById('nodes');g.innerHTML='';
+ coords.forEach((p,i)=>{const [x,y]=p;let el=document.createElementNS("http://www.w3.org/2000/svg","g");el.classList.add("node");if(i===state.current)el.classList.add("active");el.innerHTML=`<circle cx="${x}" cy="${y}" r="10"></circle><text x="${x+13}" y="${y+4}">${i+1}. ${events[i][0]}</text>`;el.onclick=()=>openEvent(i);g.appendChild(el)});
+ const t=document.getElementById('traveler');t.setAttribute('cx',coords[state.current][0]);t.setAttribute('cy',coords[state.current][1]);
+ const tl=document.getElementById('timeline');tl.innerHTML='';events.forEach((e,i)=>{let b=document.createElement('button');b.className='dot '+(state.done.has(i)?'done ':'')+(i===state.current?'current':'');b.textContent=i+1;b.onclick=()=>openEvent(i);tl.appendChild(b)});
+ updateStats()
+}
+function updateStats(){let pct=Math.round(state.done.size/events.length*100);document.getElementById('bar').style.width=pct+'%';document.getElementById('progressPill').textContent='探索 '+pct+'%';document.getElementById('doneText').textContent=`${state.done.size} / ${events.length} 个节点`;document.getElementById('scorePill').textContent='得分 '+state.score;document.getElementById('scoreSmall').textContent=state.score+' 分'}
+function openEvent(i){state.current=i;state.tab=0;const e=events[i];document.getElementById('eventCard').classList.add('active');document.getElementById('evDate').textContent=e[1];document.getElementById('evTitle').textContent=e[0];document.getElementById('evLead').textContent=e[2];renderTabs();renderQuiz();renderMap();document.getElementById('eventCard').scrollIntoView({behavior:'smooth',block:'start'})}
+function renderTabs(){const names=['事件现场','史料核对','观察证据','课堂思考'];const e=events[state.current];const vals=[e[3],e[4],e[6],e[8]];const box=document.getElementById('tabs');box.innerHTML='';names.forEach((n,i)=>{let b=document.createElement('button');b.className='tab '+(i===state.tab?'active':'');b.textContent=n;b.onclick=()=>{state.tab=i;renderTabs()};box.appendChild(b)});document.getElementById('tabbody').textContent=vals[state.tab]}
+function renderQuiz(){const e=events[state.current];document.getElementById('question').textContent=e[9];const opts=e.slice(10,14);const correct=e[14];const box=document.getElementById('options');box.innerHTML='';opts.forEach((o,i)=>{let b=document.createElement('button');b.className='option';b.textContent=o;b.onclick=()=>answer(i,b);box.appendChild(b)});document.getElementById('feedback').textContent=state.answered.has(state.current)?'本节点已完成答题。':''}
+function answer(i,b){const e=events[state.current];if(state.answered.has(state.current))return;document.querySelectorAll('.option').forEach(x=>x.disabled=true);if(i===e[14]){b.classList.add('correct');state.score+=10;document.getElementById('feedback').textContent='回答正确：你抓住了本节点的核心信息。';}else{b.classList.add('wrong');document.querySelectorAll('.option')[e[14]].classList.add('correct');document.getElementById('feedback').textContent='答案已显示。建议回到“史料核对”再看一次。'}state.answered.add(state.current);updateStats()}
+function completeNode(){state.done.add(state.current);renderMap();document.getElementById('welcome').textContent=`已完成“${events[state.current][0]}”。继续向前探索吧。`}
+function nextNode(){let n=Math.min(events.length-1,state.current+1);openEvent(n)}
+function showTeacher(){showModal(`<h2>课程设计说明</h2><p>本项目以“路线探索 + 历史节点 + 史料核对 + 互动答题”为核心结构，将长征历史转化为可点击、可探索的数字课堂。</p><h3>设计目标</h3><p>1. 建立时间与空间双重历史框架；2. 引导学生区分事实、史料与叙事表达；3. 通过问题任务促进主动学习；4. 用学习报告记录课程完成情况。</p><h3>答辩可讲</h3><p>系统采用单页网页结构，无外部依赖，手机与电脑自适应；路线使用SVG绘制，事件数据与界面逻辑分离，便于后续扩展照片、音频、视频和更多史料。</p><p class="small">历史事实应以权威出版物、博物馆资料和正式党史资料进一步核对。本演示版的路线图为教学示意图。</p><button class="primary" onclick="closeModal()">返回</button>`)}
+function showReport(){let pct=Math.round(state.done.size/events.length*100);showModal(`<h2>我的学习报告</h2><p>本报告根据当前浏览器会话中的学习记录生成。</p><div class="reportgrid"><div class="reportstat"><strong>${pct}%</strong><span>探索进度</span></div><div class="reportstat"><strong>${state.score}</strong><span>答题得分</span></div><div class="reportstat"><strong>${state.done.size}</strong><span>完成节点</span></div></div><h3>学习建议</h3><p>${pct===100?'你已完成全部节点，可以进一步使用教师模式复盘时间线。':'建议继续完成未探索节点，并在“史料核对”“课堂思考”两个栏目中记录自己的理解。'}</p><button class="primary" onclick="window.print()">打印/保存PDF</button> <button class="ghost" onclick="closeModal()">关闭</button>`)}
+function showModal(html){document.getElementById('modalbox').innerHTML=html;document.getElementById('modal').classList.add('show')}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()})
+</script>
+</body>
+</html>
