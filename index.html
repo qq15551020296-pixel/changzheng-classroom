@@ -1,75 +1,237 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#97151d"><title>重走长征路 9.0｜终极沉浸式课程</title><style>
-:root{--red:#97151d;--red2:#c92d35;--gold:#e0b55d;--bg:#090606;--panel:#1d0e0f;--line:#4d2928;--paper:#f7efe2;--ink:#231914;--muted:#a99790}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:#f4e9e4;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}button,input{font:inherit}
-.hidden{display:none!important}
-#intro{position:fixed;z-index:100;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 50% 42%,#c0262d,#48080b 55%,#090303);overflow:hidden;transition:.8s}.introTitle{text-align:center;position:relative}.introTitle .line{letter-spacing:7px;color:#f0cb73;font-size:11px}.introTitle h1{font:clamp(45px,10vw,92px) Georgia,serif;line-height:1.05;margin:22px 0}.introTitle p{color:#e6d5c7;letter-spacing:2px}.enter{margin-top:25px;border:1px solid var(--gold);background:#0002;color:#ffe8a1;border-radius:999px;padding:14px 34px;cursor:pointer}
-header{position:sticky;top:0;z-index:30;background:#100808eF;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.head{max-width:1450px;margin:auto;padding:9px 15px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900}.brand small{display:block;color:#a9958d;font-weight:400;font-size:10px}.stats{display:flex;gap:6px}.stat{font-size:10px;background:#241111;border:1px solid var(--line);padding:6px 8px;border-radius:8px}.stat b{color:#f0c668}
-main{max-width:1450px;margin:auto;padding:14px}.hud{display:grid;grid-template-columns:1fr 1.25fr;gap:12px}.panel{background:linear-gradient(145deg,#241112,#140b0b);border:1px solid var(--line);border-radius:17px;box-shadow:0 15px 50px #0007}.hero{padding:25px}.hero h2{font:clamp(34px,5vw,62px) Georgia,serif;margin:15px 0}.hero p{color:#cdbeb7;line-height:1.8}.tag{font-size:10px;color:#efc96e;border:1px solid #73572e;padding:5px 9px;border-radius:99px}.bars{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:16px}.barbox{background:#180d0d;padding:8px;border-radius:9px;font-size:10px}.track{height:6px;background:#070404;border-radius:8px;margin-top:6px}.fill{height:100%;background:linear-gradient(90deg,var(--red2),var(--gold));border-radius:8px}
-.map{padding:13px}.map h3{font-size:12px;color:#e5bd69;margin:0 0 7px}.route{height:270px;background:radial-gradient(circle,#3b2119,#130b0b);border-radius:12px;overflow:hidden}.route svg{width:100%;height:100%}.route text{fill:#e8d6ae;font-size:9px}.route circle{cursor:pointer}.march{filter:drop-shadow(0 0 10px #ffe47f)}
-.nav{display:flex;gap:6px;overflow:auto;padding:11px 0}.nav button{white-space:nowrap;background:#1e1010;color:#d8c8c1;border:1px solid var(--line);border-radius:9px;padding:9px 12px;cursor:pointer}.nav button.on{background:var(--red);color:white}
-.layout{display:grid;grid-template-columns:250px 1fr;gap:12px}.missions{padding:12px}.missionList{display:grid;gap:6px;max-height:710px;overflow:auto}.mission{background:#1b0e0e;border:1px solid #442524;color:#d9c8c1;text-align:left;padding:9px;border-radius:9px;cursor:pointer}.mission.on{background:#9c1821;color:white}.mission.lock{opacity:.28}
-.content{padding:24px}.content h2{font:36px Georgia,serif;margin:6px 0}.meta{font-size:10px;color:#d5ad60}.story{line-height:1.9;color:#ded1ca}.timeline{display:flex;gap:8px;overflow:auto;margin:15px 0}.time{min-width:155px;background:#1a0e0e;border:1px solid #432524;border-radius:10px;padding:10px}.time b{color:#e5bb64;font-size:10px}.time span{display:block;font-size:12px;margin-top:4px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:var(--paper);color:var(--ink);padding:15px;border-radius:13px}.card p{color:#5c514b;font-size:13px;line-height:1.65}.badge{color:var(--red);font-size:10px;font-weight:900}
-.event{margin-top:15px;background:linear-gradient(145deg,#5b1118,#250b0d);padding:18px;border:1px solid #8e2b2e;border-radius:15px}.event h3{margin-top:0}.choice{display:block;width:100%;text-align:left;background:#fff;color:#281914;border:1px solid #d7c4ae;padding:10px;border-radius:8px;margin:6px 0;cursor:pointer}.choice:hover{border-color:var(--red)}.result{font-weight:800;margin-top:8px}
-.archive{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.archive .a{background:#180d0d;border:1px solid var(--line);border-radius:10px;padding:11px}.a b{font-size:12px}.a small{display:block;color:#aa9890;font-size:10px;line-height:1.5;margin-top:5px}
-.people{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.gallery img{width:100%;height:190px;object-fit:cover;border-radius:11px}
-.exam{padding:20px}.q{background:var(--paper);color:var(--ink);border-radius:12px;padding:14px;margin:9px 0}.q button{display:block;width:100%;text-align:left;margin:6px 0;padding:9px;border:1px solid #d7c4af;background:#fff;border-radius:8px}.certificate{text-align:center;background:#f8f0df;color:#281b16;border:7px double #b88b43;border-radius:9px;padding:32px}.certificate h2{font:40px Georgia,serif}.gold{color:#986c23}
-.teacherGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.teacherBox{background:#1a0d0d;border:1px solid var(--line);padding:14px;border-radius:11px}.teacherBox b{display:block;color:#efc96b;margin-bottom:5px}.teacherBox span{font-size:11px;color:#aa9890;line-height:1.6}
-.modal{position:fixed;z-index:60;inset:0;background:#000c;display:grid;place-items:center;padding:15px}.modalbox{max-width:850px;max-height:88vh;overflow:auto;background:var(--paper);color:var(--ink);padding:24px;border-radius:17px}.close{float:right;background:#331515;color:#fff;border:0;padding:7px 10px;border-radius:7px}
-@media(max-width:950px){.hud,.layout,.cards{grid-template-columns:1fr}.archive{grid-template-columns:repeat(2,1fr)}.people,.teacherGrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.stats{display:none}.hero{padding:19px}.hero h2{font-size:38px}.archive,.people,.teacherGrid,.gallery{grid-template-columns:1fr}.content{padding:16px}}
-</style></head><body>
-<div id="intro"><div class="introTitle"><div class="line">大学生课程设计 · 沉浸式历史学习</div><h1>重走长征路<br>9.0</h1><p>把历史变成一条可以走、可以判断、可以复盘的路</p><button class="enter" onclick="start()">开始行军 →</button></div></div>
-<header><div class="head"><div class="brand">🚩 重走长征路 9.0<small>终极沉浸式长征游戏课堂</small></div><div class="stats"><div class="stat">体力 <b id="energy">82</b></div><div class="stat">粮食 <b id="food">78</b></div><div class="stat">士气 <b id="morale">86</b></div><div class="stat">XP <b id="xp">0</b></div></div></div></header>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#171310">
+<meta name="description" content="重走长征路12.0——电影纪录片式、第一人称沉浸式长征历史探索体验。">
+<title>重走长征路 12.0｜走进历史</title>
+<style>
+:root{--ink:#f3eee4;--muted:#c5b9a7;--red:#b52b24;--red2:#e64b3e;--gold:#d7b77a;--night:#171310;--panel:rgba(26,22,19,.86);--line:rgba(255,244,224,.18);--safe-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--night);color:var(--ink);font-family:ui-serif,"Songti SC","Noto Serif SC",serif;overflow-x:hidden}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}a{color:#f0c989}button:disabled{opacity:.35;cursor:not-allowed}.app{min-height:100vh;position:relative;background:radial-gradient(ellipse at 50% 0%,#493025 0%,#211a16 40%,#12100f 100%)}.grain{pointer-events:none;position:fixed;inset:0;z-index:20;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}.topbar{position:fixed;z-index:30;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top,0px)) clamp(16px,4vw,48px) 14px;background:linear-gradient(#15110ff2,transparent);gap:12px}.brand{display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.15em;color:#f0dfc5}.brand-mark{width:28px;height:28px;border:1px solid #b83c32;display:grid;place-items:center;color:#d34a3e;font-size:15px;transform:rotate(45deg)}.brand-mark span{transform:rotate(-45deg)}.top-actions{display:flex;gap:8px}.ghost-btn,.solid-btn,.icon-btn{border:1px solid var(--line);background:#1d1915a8;color:var(--ink);padding:10px 14px;border-radius:3px;font-size:13px;letter-spacing:.04em;transition:.2s}.ghost-btn:hover,.icon-btn:hover{border-color:var(--gold);background:#36261e}.solid-btn{border-color:var(--red);background:var(--red);padding:13px 20px}.solid-btn:hover{background:#d43b31}.icon-btn{padding:9px 11px}.view{display:none;min-height:100vh}.view.active{display:block;animation:fadeIn .65s ease both}@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.hero{min-height:100svh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding:120px clamp(22px,8vw,110px) 70px;background:linear-gradient(90deg,rgba(14,12,11,.82),rgba(14,12,11,.18) 75%),linear-gradient(0deg,#171310 0%,transparent 70%)}.hero-art{position:absolute;inset:0;overflow:hidden;background:linear-gradient(180deg,#201a17 0%,#6d4533 43%,#1b1715 100%)}.sun{position:absolute;width:min(35vw,300px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#e7b778 0%,#bc6544 35%,rgba(190,87,57,.05) 70%);top:15%;right:17%;opacity:.75;filter:blur(1px)}.mountain{position:absolute;left:-5%;right:-5%;bottom:0;height:75%;background:#30231e;clip-path:polygon(0 61%,10% 45%,17% 54%,29% 25%,38% 48%,48% 32%,59% 55%,70% 22%,82% 48%,91% 35%,100% 57%,100% 100%,0 100%);filter:drop-shadow(0 -15px 20px #171310)}.mountain.m2{height:53%;background:#4b3026;opacity:.85;clip-path:polygon(0 42%,12% 56%,23% 28%,34% 52%,48% 20%,60% 45%,74% 25%,88% 53%,100% 33%,100% 100%,0 100%)}.mountain.m3{height:33%;background:#171310;clip-path:polygon(0 22%,13% 44%,25% 30%,37% 55%,52% 27%,66% 45%,78% 20%,100% 39%,100% 100%,0 100%)}.trail{position:absolute;bottom:12%;left:36%;width:40%;height:38%;border-left:2px solid #c6a37a;transform:skew(-25deg) rotate(-15deg);opacity:.35;filter:blur(.4px)}.hero-content{position:relative;z-index:2;max-width:780px}.eyebrow{font:12px/1.5 ui-sans-serif,system-ui,sans-serif;letter-spacing:.35em;color:#e4bd8b;text-transform:uppercase}.hero h1{font-size:clamp(48px,9vw,112px);line-height:1.04;font-weight:500;letter-spacing:.06em;margin:22px 0 20px;text-shadow:0 5px 25px #090807}.hero h1 small{display:block;font-size:.38em;letter-spacing:.28em;color:#dfb98c;margin-bottom:16px}.hero p{font-size:clamp(15px,2vw,19px);line-height:1.95;max-width:550px;color:#e0d2bf;margin:0 0 28px}.hero-bottom{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.micro{font:11px/1.8 ui-sans-serif,system-ui,sans-serif;color:#b8a99a;letter-spacing:.1em}.scroll-cue{position:absolute;right:clamp(18px,4vw,54px);bottom:72px;writing-mode:vertical-rl;font:10px ui-sans-serif,system-ui,sans-serif;letter-spacing:.25em;color:#b9a58f}.scroll-cue:after{content:"";display:inline-block;width:1px;height:55px;background:#b9a58f;margin-top:14px;align-self:center}.journey{padding:100px clamp(16px,5vw,64px) 60px;max-width:1400px;margin:auto}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px}.section-head h2{font-size:clamp(28px,4vw,48px);font-weight:500;margin:8px 0}.section-head p{color:var(--muted);line-height:1.8;max-width:500px;font-size:14px}.journey-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:22px}.map-panel,.side-panel,.archive-panel{border:1px solid var(--line);background:linear-gradient(145deg,rgba(49,37,29,.85),rgba(22,19,17,.94));position:relative;overflow:hidden}.map-panel{min-height:500px;padding:20px}.panel-kicker{font:11px ui-sans-serif,system-ui,sans-serif;color:#c8ab80;letter-spacing:.18em;text-transform:uppercase}.map-svg{width:100%;height:auto;display:block;min-height:320px}.map-land{fill:#332820;stroke:#69513e;stroke-width:1}.route-under{fill:none;stroke:#6f4d3d;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.route-line{fill:none;stroke:#d54b3e;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:900;animation:drawRoute 2.5s ease forwards}.route-point{cursor:pointer;outline:none}.route-point circle{fill:#221713;stroke:#d8b47b;stroke-width:1.6;transition:.2s}.route-point text{fill:#e8d9c6;font:11px ui-sans-serif,system-ui,sans-serif;pointer-events:none}.route-point:hover circle,.route-point.selected circle{fill:#c23b30;stroke:#fff0ce;r:8}.route-point.locked{opacity:.3}.map-note{display:flex;justify-content:space-between;gap:12px;color:#b6a797;font:11px ui-sans-serif,system-ui,sans-serif;border-top:1px solid var(--line);padding-top:12px}.side-panel{padding:24px;display:flex;flex-direction:column;gap:18px}.progress-row{display:flex;justify-content:space-between;font:12px ui-sans-serif,system-ui,sans-serif;color:#cdbda9}.progress-track{height:3px;background:#514035;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--red2);transition:width .4s}.next-card{margin-top:auto;border-top:1px solid var(--line);padding-top:18px}.next-card h3{font-size:25px;font-weight:500;margin:9px 0}.next-card p{font-size:13px;line-height:1.9;color:#c8b9a7}.scene-view{min-height:100vh;padding-top:70px;position:relative;overflow:hidden;background:#211a16}.scene-backdrop{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,10,.2),rgba(17,14,12,.92) 80%),radial-gradient(ellipse at 65% 25%,#80533b 0%,#433025 36%,#171310 78%);transition:background .7s}.scene-backdrop:before,.scene-backdrop:after{content:"";position:absolute;inset:0;pointer-events:none}.scene-backdrop:before{background:linear-gradient(115deg,transparent 40%,rgba(255,210,155,.07) 50%,transparent 61%);animation:lightSweep 9s ease-in-out infinite}.scene-backdrop:after{background:linear-gradient(0deg,#171310 2%,transparent 50%)}@keyframes lightSweep{0%,100%{transform:translateX(-25%);opacity:.25}50%{transform:translateX(25%);opacity:.8}}.scene-landscape{position:absolute;bottom:22%;left:0;right:0;height:48%;opacity:.8}.scene-landscape .ridge{position:absolute;inset:0;background:#382820;clip-path:polygon(0 65%,12% 42%,22% 57%,35% 22%,49% 52%,62% 31%,73% 55%,85% 18%,100% 48%,100% 100%,0 100%)}.scene-landscape .ridge.two{background:#211a16;clip-path:polygon(0 48%,18% 66%,31% 42%,45% 63%,58% 35%,75% 64%,89% 40%,100% 54%,100% 100%,0 100%)}.scene-content{position:relative;z-index:2;max-width:1200px;margin:auto;padding:60px clamp(18px,6vw,80px) 50px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.75fr);gap:clamp(24px,6vw,80px);align-items:end;min-height:calc(100svh - 70px)}.scene-number{font:11px ui-sans-serif,system-ui,sans-serif;letter-spacing:.25em;color:#d7b77a}.scene-content h2{font-size:clamp(42px,7vw,82px);font-weight:500;line-height:1.08;margin:15px 0 20px}.scene-lead{font-size:clamp(16px,2vw,20px);line-height:2;color:#e2d3bf;max-width:650px}.scene-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.story-panel{background:rgba(19,16,14,.78);backdrop-filter:blur(10px);border:1px solid var(--line);padding:24px;box-shadow:0 20px 70px #0a0807a6}.story-panel .story-label{font:10px ui-sans-serif,system-ui,sans-serif;letter-spacing:.2em;color:#d7b77a}.story-panel h3{font-size:23px;font-weight:500;margin:12px 0}.story-panel p{font-size:14px;line-height:1.95;color:#d0c1ae}.story-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.story-actions button{font-size:12px;padding:10px 12px}.scene-footer{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px clamp(18px,6vw,80px) calc(18px + var(--safe-bottom));border-top:1px solid #ffffff12;background:#171310}.scene-footer span{font:11px ui-sans-serif,system-ui,sans-serif;color:#a99a89}.modal-backdrop{position:fixed;inset:0;background:#080706d9;z-index:60;display:none;align-items:flex-end;justify-content:center;padding:20px}.modal-backdrop.open{display:flex;animation:fadeIn .2s ease}.modal{width:min(720px,100%);max-height:85svh;overflow:auto;background:#211a16;border:1px solid #66503d;padding:clamp(20px,4vw,34px);box-shadow:0 30px 100px #000}.modal-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.modal h2{font-size:28px;font-weight:500;margin:8px 0 16px}.modal p,.modal li{font-size:14px;line-height:1.95;color:#d3c4b1}.modal .fact{border-left:2px solid var(--red);padding:4px 0 4px 14px;margin:18px 0}.modal a{overflow-wrap:anywhere}.modal-close{background:transparent;border:1px solid var(--line);color:var(--ink);padding:8px 12px}.modal-tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin:18px 0}.modal-tabs button{border:0;background:transparent;color:#bba994;padding:10px 8px;border-bottom:2px solid transparent}.modal-tabs button.active{color:#f0d4a4;border-bottom-color:var(--red2)}.modal-content{min-height:100px}.archive-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}.archive-card{padding:20px;border:1px solid var(--line);background:#211a16;min-height:160px}.archive-card h3{font-size:19px;font-weight:500;margin:12px 0 8px}.archive-card p{font-size:12px;line-height:1.8;color:#bfae9b}.archive-card button{border:0;background:transparent;color:#e8bd84;padding:8px 0;font-size:12px}.toast{position:fixed;z-index:80;bottom:calc(22px + var(--safe-bottom));left:50%;transform:translateX(-50%) translateY(20px);opacity:0;background:#efe0c8;color:#211711;padding:12px 18px;font:12px ui-sans-serif,system-ui,sans-serif;transition:.25s;pointer-events:none;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.footer-note{max-width:1100px;margin:0 auto;padding:0 20px 40px;color:#897b6c;font:11px/1.9 ui-sans-serif,system-ui,sans-serif}.hide{display:none!important}
+@keyframes drawRoute{to{stroke-dashoffset:0}}
+@media(max-width:800px){.topbar{padding-left:14px;padding-right:14px}.brand{font-size:10px;letter-spacing:.1em}.top-actions .ghost-btn{padding:9px 10px;font-size:11px}.hero{padding:130px 22px 75px}.hero h1{font-size:clamp(46px,13vw,78px)}.hero-art .sun{width:42vw;right:8%;top:20%}.scroll-cue{display:none}.journey{padding-top:90px}.section-head{display:block}.section-head p{margin-bottom:0}.journey-layout{grid-template-columns:1fr}.map-panel{min-height:0;padding:14px}.map-svg{min-height:260px}.side-panel{min-height:340px}.scene-content{grid-template-columns:1fr;align-content:end;padding-top:65px;gap:25px;min-height:calc(100svh - 70px)}.scene-content h2{font-size:clamp(42px,12vw,66px)}.scene-landscape{bottom:38%;height:35%}.story-panel{padding:20px}.scene-footer{align-items:flex-start;flex-wrap:wrap}.archive-grid{grid-template-columns:1fr}.archive-card{min-height:0}.modal-backdrop{padding:10px}.modal{max-height:88svh}.map-note{font-size:10px}.micro{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="grain"></div>
+<header class="topbar">
+  <div class="brand"><div class="brand-mark"><span>★</span></div><span>重走长征路 <b>12.0</b></span></div>
+  <div class="top-actions">
+    <button class="ghost-btn" id="mapTopBtn">旅程地图</button>
+    <button class="ghost-btn" id="archiveTopBtn">史料档案</button>
+    <button class="icon-btn" id="soundBtn" aria-label="切换环境音效" title="环境氛围">♫</button>
+  </div>
+</header>
+
 <main>
-<section class="hud"><div class="panel hero"><span class="tag">13主线 · 100+题库 · 教师模式 · 电子学习证书</span><h2>你不是在“看”长征。<br>你正在走。</h2><p>9.0将<strong>路线、资源、历史事件、史料与决策</strong>放进同一套交互系统。游戏化只负责让你主动思考，史实仍然由公开资料负责约束。</p><div class="bars"><div class="barbox">体力<div class="track"><div id="ef" class="fill"></div></div></div><div class="barbox">粮食<div class="track"><div id="ff" class="fill"></div></div></div><div class="barbox">士气<div class="track"><div id="mf" class="fill"></div></div></div></div></div>
-<div class="panel map"><h3>🗺️ 动态长征路线 · 点击已解锁节点</h3><div class="route"><svg viewBox="0 0 100 90" preserveAspectRatio="none"><path d="M7 80 C15 69 24 57 39 38 S53 43 60 31 S67 41 73 27 S85 52 91 38 L96 24" fill="none" stroke="#8d282d" stroke-width="2.4"/><path d="M7 80 C15 69 24 57 39 38 S53 43 60 31 S67 41 73 27 S85 52 91 38 L96 24" fill="none" stroke="#e1b65e" stroke-width=".7" stroke-dasharray="3 3"/><g id="nodes"></g><circle id="march" class="march" cx="7" cy="80" r="2" fill="#fff2a4"/></svg></div></div></section>
-<div class="nav"><button class="on" onclick="tab('course',this)">🗺️ 行军主线</button><button onclick="tab('archive',this)">📚 史料档案</button><button onclick="tab('people',this)">👤 人物档案</button><button onclick="tab('exam',this)">🎓 长征大考</button><button onclick="tab('report',this)">🏅 学习证书</button><button onclick="tab('teacher',this)">👨‍🏫 教师/答辩</button></div>
-<section id="course"><div class="layout"><aside class="panel missions"><div style="font-size:10px;color:#e0b65f;margin-bottom:7px">MISSION · 13 NODES</div><div id="missions" class="missionList"></div></aside><article id="view" class="panel content"></article></div></section>
-<section id="archive" class="hidden panel" style="padding:20px"><h2>📚 史料档案室</h2><p style="color:#a8958c">证据优先：先看来源，再判断它能说明什么。</p><div id="archiveGrid" class="archive"></div></section>
-<section id="people" class="hidden"><div id="peopleGrid" class="people"></div></section>
-<section id="exam" class="hidden panel exam"><h2>🎓 长征大考</h2><p>题库100+，每次随机10题。考的是历史关系、史料意识与空间思维。</p><div id="examBox"></div></section>
-<section id="report" class="hidden panel" style="padding:20px"><h2>🏅 学习证书</h2><div id="reportBox"></div></section>
-<section id="teacher" class="hidden panel" style="padding:20px"><h2>👨‍🏫 教师 / 答辩模式</h2><div id="teacherBox"></div></section>
+<section class="view active" id="homeView">
+  <div class="hero">
+    <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="mountain m2"></div><div class="mountain"></div><div class="mountain m3"></div><div class="trail"></div></div>
+    <div class="hero-content">
+      <div class="eyebrow">A JOURNEY THROUGH HISTORY · 1934—1936</div>
+      <h1><small>第一人称沉浸式历史体验</small>重走长征路</h1>
+      <p>山河在前，征途未尽。跟随历史的脚步，从一段漫长的行军开始，在地图、场景与史料之间，慢慢走近那段真实发生过的岁月。</p>
+      <div class="hero-bottom">
+        <button class="solid-btn" id="startBtn">进入旅程　↗</button>
+        <button class="ghost-btn" id="resumeBtn">继续上次旅程</button>
+        <span class="micro">自主探索 · 无考试闯关 · 进度自动保存</span>
+      </div>
+    </div>
+    <div class="scroll-cue">沿着历史继续前行</div>
+  </div>
+  <div class="journey" id="journeySection">
+    <div class="section-head"><div><div class="eyebrow">THE ROUTE</div><h2>一条路，一段历史</h2></div><p>选择地图上的地点进入场景。你可以沿着路线前行，也可以返回已经探索过的节点，重新查看人物、史料和事件。</p></div>
+    <div class="journey-layout">
+      <div class="map-panel">
+        <div class="panel-kicker">长征路线 · 示意地图</div>
+        <svg class="map-svg" viewBox="0 0 700 490" role="img" aria-label="长征路线示意图">
+          <path class="map-land" d="M55 50 L180 26 250 55 325 37 390 70 480 48 550 95 636 120 614 208 652 274 598 350 520 389 454 447 370 432 294 458 216 421 147 386 80 318 48 230Z"/>
+          <path d="M90 92 Q220 120 280 80 T475 112 T600 165 M70 290 Q210 250 285 300 T490 300 T610 350 M170 380 Q270 350 330 395 T510 405" fill="none" stroke="#5a4637" stroke-width="1" stroke-dasharray="3 7"/>
+          <path class="route-under" d="M125 365 C150 330 174 316 210 300 S250 252 280 242 S320 260 342 220 S365 175 398 184 S425 226 454 204 S485 160 502 140 S530 185 552 200 S570 260 552 286 S515 315 492 338 S460 368 430 382"/>
+          <path class="route-line" d="M125 365 C150 330 174 316 210 300 S250 252 280 242 S320 260 342 220 S365 175 398 184 S425 226 454 204 S485 160 502 140 S530 185 552 200 S570 260 552 286 S515 315 492 338 S460 368 430 382"/>
+          <g id="mapPoints"></g>
+          <text x="85" y="410" fill="#8c7765" font-size="12">南方山地</text><text x="510" y="80" fill="#8c7765" font-size="12">北上方向</text>
+        </svg>
+        <div class="map-note"><span>● 红色路线为教学示意，并非精确地理测绘</span><span id="mapVisited">已探索 0 / 13</span></div>
+      </div>
+      <aside class="side-panel">
+        <div class="panel-kicker">你的旅程记录</div>
+        <div class="progress-row"><span>路线探索进度</span><span id="progressText">0%</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <div>
+          <div class="panel-kicker">当前所在</div>
+          <h3 id="currentTitle" style="font-size:27px;font-weight:500;margin:10px 0">于都出发</h3>
+          <p id="currentSummary" style="font-size:13px;line-height:1.9;color:#c8b9a7">长征旅程从这里开始。进入场景，沿着地图与史料探索历史。</p>
+        </div>
+        <div class="next-card">
+          <div class="panel-kicker">继续前行</div>
+          <h3 id="nextTitle">走进历史</h3>
+          <p id="nextSummary">从地图出发，选择一个地点，开启你的旅程。</p>
+          <button class="solid-btn" id="enterSceneBtn">进入当前场景　→</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <div class="footer-note">本网站为历史学习与互动叙事项目。地图、场景气氛和第一人称体验属于教学模拟；历史事实、史料摘录与创作性叙事会分别标注。路线图仅用于学习导航，不作为精确地理地图。</div>
+</section>
+
+<section class="view" id="sceneView">
+  <div class="scene-view">
+    <div class="scene-backdrop" id="sceneBackdrop"><div class="scene-landscape"><div class="ridge"></div><div class="ridge two"></div></div></div>
+    <div class="scene-content">
+      <div>
+        <div class="scene-number" id="sceneNumber">CHAPTER 01 · 旅程开始</div>
+        <h2 id="sceneTitle">于都出发</h2>
+        <p class="scene-lead" id="sceneLead"></p>
+        <div class="scene-actions">
+          <button class="solid-btn" id="continueBtn">继续前行　→</button>
+          <button class="ghost-btn" id="mapSceneBtn">查看路线地图</button>
+          <button class="ghost-btn" id="backHomeBtn">返回首页</button>
+        </div>
+      </div>
+      <aside class="story-panel">
+        <div class="story-label">沿途讲述 · FIELD NOTES</div>
+        <h3 id="storyTitle">出发之前</h3>
+        <p id="storyText"></p>
+        <div class="story-actions">
+          <button class="ghost-btn" id="factsBtn">了解历史背景</button>
+          <button class="ghost-btn" id="archiveBtn">查看相关史料</button>
+          <button class="ghost-btn" id="objectBtn">观察现场线索</button>
+        </div>
+      </aside>
+    </div>
+    <div class="scene-footer"><span id="sceneFooterLeft">旅程记录自动保存</span><span id="sceneFooterRight">探索地点 1 / 13</span></div>
+  </div>
+</section>
+
+<section class="view" id="archiveView">
+  <div class="journey" style="padding-top:110px">
+    <div class="section-head"><div><div class="eyebrow">ARCHIVE & MEMORY</div><h2>沿途史料档案</h2></div><p>这不是考试题库，而是一份可以随时翻阅的历史档案。先体验场景，再按兴趣深入阅读；每项资料都尽可能附上可核查的来源。</p></div>
+    <div class="archive-grid" id="archiveGrid"></div>
+    <div style="margin-top:28px"><button class="ghost-btn" id="archiveBackBtn">← 返回旅程</button> <a href="sources.html" class="ghost-btn" style="display:inline-block;text-decoration:none">查看完整来源清单 ↗</a></div>
+  </div>
+</section>
 </main>
-<footer style="max-width:1450px;margin:auto;padding:20px 15px 60px;color:#806f68;font-size:11px;line-height:1.7">本项目为大学课程设计网页。第一人称段落属于教学情境创作，事件选择属于课堂推演，不冒充历史人物原话或真实发生的另一种历史结果。图片使用外部公开文件路径，版权与访问条件以原站为准。</footer>
-<div id="modal" class="modal hidden"><div class="modalbox"><button id="close" class="close">关闭</button><div id="modalbody"></div></div></div>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-top"><div><div class="eyebrow" id="modalKicker">沿途发现</div><h2 id="modalTitle">历史背景</h2></div><button class="modal-close" id="modalClose">关闭 ×</button></div>
+    <div class="modal-tabs" id="modalTabs"><button class="active" data-tab="story">背景讲述</button><button data-tab="fact">史实摘要</button><button data-tab="sources">参考来源</button></div>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
 <script>
-const C=[["于都出发", "1934.10", "战略转移", "为什么必须走？", "第五次反“围剿”失利后，中央红军开始战略转移。"], ["血色湘江", "1934.11—12", "湘江战役", "代价意味着什么？", "突破湘江封锁线的战斗造成严重损失，战略压力进一步加剧。"], ["通道·黎平", "1934.12", "战略方向", "方向如何选择？", "通道、黎平等会议是长征初期重要战略方向讨论节点。"], ["遵义转折", "1935.1.15—17", "遵义会议", "为什么称为转折？", "遵义会议解决重要军事和组织问题，成为党的历史上生死攸关的转折点。"], ["扎西·苟坝·会理", "1935.2—5", "决策过程", "怎样把判断变成行动？", "遵义之后一系列会议与军事行动展示了复杂信息条件下的决策过程。"], ["四渡赤水", "1935.1—3", "机动作战", "如何争取主动？", "四渡赤水是长征中灵活机动、改变战场关系的重要军事行动。"], ["巧渡金沙江", "1935.5", "摆脱围追", "渡河需要什么？", "巧渡金沙江是中央红军摆脱围追堵截的重要一步。"], ["大渡河·泸定桥", "1935.5", "天险", "时间与地形意味着什么？", "强渡大渡河、泸定桥是长征途中具有标志性的历史节点。"], ["夹金山", "1935.6", "雪山", "人的极限在哪里？", "雪山、严寒、缺氧与后勤构成严酷的自然和组织约束。"], ["懋功会师", "1935.6", "会师", "会师后还有什么问题？", "中央红军与红四方面军在懋功地区会师，随后仍面临重要战略与组织问题。"], ["草地·北上", "1935.8—10", "坚持北上", "如何维持队伍？", "草地等极端环境考验体力、粮食、组织和纪律。"], ["陕北落脚", "1935.10—11", "战略依托", "落脚点为什么重要？", "中央红军到达陕北，形成新的战略依托。"], ["三大主力会师", "1936.10", "长征胜利", "长征留下了什么？", "1936年10月红一、红二、红四方面军在甘肃等地会师，长征胜利完成。"]],R=[["于都", 7, 80], ["湘江", 15, 69], ["通道", 24, 57], ["黎平", 30, 49], ["遵义", 39, 38], ["扎西", 46, 50], ["赤水", 53, 43], ["金沙江", 60, 31], ["泸定", 67, 41], ["夹金山", 73, 27], ["懋功", 79, 36], ["草地", 85, 52], ["陕北", 91, 38], ["会宁", 96, 24]],SRC=[["中国国家博物馆｜长征路——沈尧伊长征美术作品展", "https://www.chnmuseum.cn/zx/gbxw/202609/t20260928_282864.shtml"], ["中国国家博物馆｜国博展讯", "https://www.chnmuseum.cn/zx/gbxw/202609/t20260916_282588.shtml"], ["中国国家博物馆｜看得见的长征", "https://www.chnmuseum.cn/fw/jyhdyy/202609/t20260917_282603.shtml"], ["教育部｜遵义会议专题资料", "https://www.moe.gov.cn/jyb_xwfb/moe_2082/2021/2021_zl26/zunyihuiyi/202105/t20210506_529913.html"], ["国防部｜长征胜利85周年专题", "https://www.mod.gov.cn/gfbw/gfjy_index/js_214151/4897311.html"], ["国防部｜长征精神", "https://www.mod.gov.cn/gfbw/jmsd/4827211.html"], ["人民网党史｜长征重要会议节点", "https://dangshi.people.com.cn/n1/2021/1129/c436975-32294130.html"]],P=[["毛泽东", "遵义会议后在党中央和红军领导中的作用进一步增强。"], ["周恩来", "长征时期中央重要领导人，在军事指挥和组织工作中承担重要职责。"], ["王稼祥", "遵义后与毛泽东、周恩来组成负责军事行动的三人小组。"], ["张闻天", "遵义会议后承担中央重要领导职责。"], ["张国焘", "红四方面军重要领导人，会师后围绕北上、南下等问题出现分歧。"], ["朱德", "红军重要领导人，参与长征和后续会师。"], ["刘伯承", "红军高级将领，参与长征时期多项重要军事行动。"], ["彭德怀", "红军重要将领，参与长征时期作战。"]],F=[["史实", "第五次反“围剿”", "长征发生的重要历史背景。"], ["史实", "湘江战役", "长征初期重要战役，人员损失严重。"], ["会议", "黎平会议", "长征初期重要会议节点。"], ["会议", "遵义会议", "1935年1月15日至17日召开。"], ["会议", "扎西会议", "遵义之后的重要决策节点。"], ["会议", "苟坝会议", "长征时期重要会议节点。"], ["会议", "会理会议", "1935年5月的重要会议节点。"], ["战役", "四渡赤水", "灵活机动、争取主动的重要军事行动。"], ["战役", "巧渡金沙江", "摆脱围追堵截的重要行动。"], ["战役", "强渡大渡河", "长征途中重要渡河行动。"], ["战役", "泸定桥", "大渡河上的标志性历史节点。"], ["地理", "夹金山", "雪山行军的重要自然环境节点。"], ["会师", "懋功会师", "中央红军与红四方面军会师。"], ["会师", "会宁会师", "三大主力红军长征胜利的重要标志。"], ["地理", "陕甘革命根据地", "长征后期重要落脚点与战略依托。"], ["精神", "理想信念", "长征精神的重要内核。"], ["精神", "独立自主", "遵义会议及其后历史进程中的重要经验。"], ["精神", "实事求是", "复杂局势下进行判断的重要方法。"], ["方法", "史料意识", "区分史实、艺术再现、后人叙述与课堂推演。"], ["方法", "地图思维", "把时间、空间、资源与决策联系起来。"]],Q=[["遵义会议召开时间是？", ["1934年10月", "1935年1月15日至17日", "1935年6月", "1936年10月"], 1], ["四渡赤水最适合用什么概括？", ["固定防守", "灵活机动", "海上作战", "外交谈判"], 1], ["长征初期造成严重损失的重要战役是？", ["湘江战役", "淮海战役", "辽沈战役", "平津战役"], 0], ["三大主力长征胜利的重要标志是什么？", ["遵义会议", "会宁等地会师", "巧渡金沙江", "翻越雪山"], 1], ["史料意识要求我们？", ["把电影当历史照片", "区分史实与艺术再现", "只看标题", "所有图片同等可信"], 1], ["金沙江行动的重要战略意义之一是？", ["摆脱围追堵截", "返回中央苏区", "宣布长征结束", "召开遵义会议"], 0], ["懋功会师后是否就不存在战略问题？", ["不是", "是", "完全没有分歧", "历史已经结束"], 0], ["第一人称教学文字应理解为？", ["真实口述", "教学情境创作", "档案原文", "官方讲话"], 1], ["第五次反“围剿”失利与长征是什么关系？", ["重要历史背景", "没有关系", "发生在长征之后", "艺术虚构"], 0], ["陕北在长征后期的重要意义是？", ["重要落脚点和战略依托", "长征起点", "泸定桥所在地", "湘江所在地"], 0], ["历史地图最适合帮助我们理解什么？", ["时间与空间的关系", "电影评分", "人物颜值", "网络流量"], 0], ["课堂推演的正确定位是？", ["替代真实历史", "辅助理解历史决策约束", "制造新的历史事实", "证明虚构结果真实发生"], 1], ["长征精神学习应避免什么？", ["联系具体历史处境", "脱离史实空喊口号", "分析历史选择", "理解牺牲与坚持"], 1], ["会师为什么不等于所有问题自动解决？", ["会师后仍存在战略与组织问题", "因为没有路线", "因为没有红军", "因为长征没有发生"], 0], ["泸定桥教学特别适合训练什么？", ["史实与艺术再现辨析", "化学实验", "数学竞赛", "语言翻译"], 0], ["遵义会议召开时间是？", ["1934年10月", "1935年1月15日至17日", "1935年6月", "1936年10月"], 1], ["四渡赤水最适合用什么概括？", ["固定防守", "灵活机动", "海上作战", "外交谈判"], 1], ["长征初期造成严重损失的重要战役是？", ["湘江战役", "淮海战役", "辽沈战役", "平津战役"], 0], ["三大主力长征胜利的重要标志是什么？", ["遵义会议", "会宁等地会师", "巧渡金沙江", "翻越雪山"], 1], ["史料意识要求我们？", ["把电影当历史照片", "区分史实与艺术再现", "只看标题", "所有图片同等可信"], 1], ["金沙江行动的重要战略意义之一是？", ["摆脱围追堵截", "返回中央苏区", "宣布长征结束", "召开遵义会议"], 0], ["懋功会师后是否就不存在战略问题？", ["不是", "是", "完全没有分歧", "历史已经结束"], 0], ["第一人称教学文字应理解为？", ["真实口述", "教学情境创作", "档案原文", "官方讲话"], 1], ["第五次反“围剿”失利与长征是什么关系？", ["重要历史背景", "没有关系", "发生在长征之后", "艺术虚构"], 0], ["陕北在长征后期的重要意义是？", ["重要落脚点和战略依托", "长征起点", "泸定桥所在地", "湘江所在地"], 0], ["历史地图最适合帮助我们理解什么？", ["时间与空间的关系", "电影评分", "人物颜值", "网络流量"], 0], ["课堂推演的正确定位是？", ["替代真实历史", "辅助理解历史决策约束", "制造新的历史事实", "证明虚构结果真实发生"], 1], ["长征精神学习应避免什么？", ["联系具体历史处境", "脱离史实空喊口号", "分析历史选择", "理解牺牲与坚持"], 1], ["会师为什么不等于所有问题自动解决？", ["会师后仍存在战略与组织问题", "因为没有路线", "因为没有红军", "因为长征没有发生"], 0], ["泸定桥教学特别适合训练什么？", ["史实与艺术再现辨析", "化学实验", "数学竞赛", "语言翻译"], 0], ["遵义会议召开时间是？", ["1934年10月", "1935年1月15日至17日", "1935年6月", "1936年10月"], 1], ["四渡赤水最适合用什么概括？", ["固定防守", "灵活机动", "海上作战", "外交谈判"], 1], ["长征初期造成严重损失的重要战役是？", ["湘江战役", "淮海战役", "辽沈战役", "平津战役"], 0], ["三大主力长征胜利的重要标志是什么？", ["遵义会议", "会宁等地会师", "巧渡金沙江", "翻越雪山"], 1], ["史料意识要求我们？", ["把电影当历史照片", "区分史实与艺术再现", "只看标题", "所有图片同等可信"], 1], ["金沙江行动的重要战略意义之一是？", ["摆脱围追堵截", "返回中央苏区", "宣布长征结束", "召开遵义会议"], 0], ["懋功会师后是否就不存在战略问题？", ["不是", "是", "完全没有分歧", "历史已经结束"], 0], ["第一人称教学文字应理解为？", ["真实口述", "教学情境创作", "档案原文", "官方讲话"], 1], ["第五次反“围剿”失利与长征是什么关系？", ["重要历史背景", "没有关系", "发生在长征之后", "艺术虚构"], 0], ["陕北在长征后期的重要意义是？", ["重要落脚点和战略依托", "长征起点", "泸定桥所在地", "湘江所在地"], 0], ["历史地图最适合帮助我们理解什么？", ["时间与空间的关系", "电影评分", "人物颜值", "网络流量"], 0], ["课堂推演的正确定位是？", ["替代真实历史", "辅助理解历史决策约束", "制造新的历史事实", "证明虚构结果真实发生"], 1], ["长征精神学习应避免什么？", ["联系具体历史处境", "脱离史实空喊口号", "分析历史选择", "理解牺牲与坚持"], 1], ["会师为什么不等于所有问题自动解决？", ["会师后仍存在战略与组织问题", "因为没有路线", "因为没有红军", "因为长征没有发生"], 0], ["泸定桥教学特别适合训练什么？", ["史实与艺术再现辨析", "化学实验", "数学竞赛", "语言翻译"], 0], ["遵义会议召开时间是？", ["1934年10月", "1935年1月15日至17日", "1935年6月", "1936年10月"], 1], ["四渡赤水最适合用什么概括？", ["固定防守", "灵活机动", "海上作战", "外交谈判"], 1], ["长征初期造成严重损失的重要战役是？", ["湘江战役", "淮海战役", "辽沈战役", "平津战役"], 0], ["三大主力长征胜利的重要标志是什么？", ["遵义会议", "会宁等地会师", "巧渡金沙江", "翻越雪山"], 1], ["史料意识要求我们？", ["把电影当历史照片", "区分史实与艺术再现", "只看标题", "所有图片同等可信"], 1], ["金沙江行动的重要战略意义之一是？", ["摆脱围追堵截", "返回中央苏区", "宣布长征结束", "召开遵义会议"], 0], ["懋功会师后是否就不存在战略问题？", ["不是", "是", "完全没有分歧", "历史已经结束"], 0], ["第一人称教学文字应理解为？", ["真实口述", "教学情境创作", "档案原文", "官方讲话"], 1], ["第五次反“围剿”失利与长征是什么关系？", ["重要历史背景", "没有关系", "发生在长征之后", "艺术虚构"], 0], ["陕北在长征后期的重要意义是？", ["重要落脚点和战略依托", "长征起点", "泸定桥所在地", "湘江所在地"], 0], ["历史地图最适合帮助我们理解什么？", ["时间与空间的关系", "电影评分", "人物颜值", "网络流量"], 0], ["课堂推演的正确定位是？", ["替代真实历史", "辅助理解历史决策约束", "制造新的历史事实", "证明虚构结果真实发生"], 1], ["长征精神学习应避免什么？", ["联系具体历史处境", "脱离史实空喊口号", "分析历史选择", "理解牺牲与坚持"], 1], ["会师为什么不等于所有问题自动解决？", ["会师后仍存在战略与组织问题", "因为没有路线", "因为没有红军", "因为长征没有发生"], 0], ["泸定桥教学特别适合训练什么？", ["史实与艺术再现辨析", "化学实验", "数学竞赛", "语言翻译"], 0]];
-const IMG={map:"https://commons.wikimedia.org/wiki/Special:FilePath/The_Long_March_1934_-_1935.PNG",zunyi:"https://commons.wikimedia.org/wiki/Special:FilePath/Zunyi_Conference_Site.jpg",chain:"https://commons.wikimedia.org/wiki/Special:FilePath/060_Iron_Chain_from_Luding_Bridge_when_Red_Army_Captured_it_During_Long_March.jpg"};
-let S={i:0,u:0,done:[],xp:0,energy:82,food:78,morale:86,ach:[],exam:null,music:true};
-try{S={...S,...JSON.parse(localStorage.getItem("cz90")||"{}")}}catch(e){}
-function save(){localStorage.setItem("cz90",JSON.stringify(S))}
-function start(){document.getElementById("intro").style.opacity=0;setTimeout(()=>document.getElementById("intro").remove(),800)}
-function stats(){document.getElementById("energy").textContent=S.energy;document.getElementById("food").textContent=S.food;document.getElementById("morale").textContent=S.morale;document.getElementById("xp").textContent=S.xp;document.getElementById("ef").style.width=S.energy+"%";document.getElementById("ff").style.width=S.food+"%";document.getElementById("mf").style.width=S.morale+"%"}
-function route(){let n=document.getElementById("nodes");n.innerHTML="";R.forEach((p,i)=>{let c=document.createElementNS("http://www.w3.org/2000/svg","circle");c.setAttribute("cx",p[1]);c.setAttribute("cy",p[2]);c.setAttribute("r",i<=S.u?7:4);c.setAttribute("fill",i<=S.u?"#e9bd62":"#5b4540");c.onclick=()=>i<=S.u&&go(i);n.appendChild(c);let t=document.createElementNS("http://www.w3.org/2000/svg","text");t.setAttribute("x",p[1]-9);t.setAttribute("y",p[2]-10);t.textContent=p[0];n.appendChild(t)});let p=R[S.i];document.getElementById("march").setAttribute("cx",p[1]);document.getElementById("march").setAttribute("cy",p[2])}
-function list(){document.getElementById("missions").innerHTML=C.map((c,i)=>`<button class="mission ${i==S.i?"on ":""}${i>S.u?"lock":""}" onclick="go(${i})">${String(i+1).padStart(2,"0")} · ${c[0]}<br><small>${c[1]}</small></button>`).join("")}
-function go(i){if(i>S.u)return;S.i=i;render();document.getElementById("course").scrollIntoView({behavior:"smooth"})}
-const events=[
-["前方道路信息不完整。","你会怎么处理？",["立即按猜测前进","核实情报、比较地形和时间","完全停止行动"],1],
-["粮食与体力开始下降。","下一步优先考虑什么？",["资源、道路和队伍状态","只看目的地","忽略伤病"],0],
-["你面对多个方向选择。","什么方法最可靠？",["把时间、空间和敌情一起分析","只看地图颜色","凭感觉"],0],
-["会师之后出现战略意见差异。","课堂讨论应该先做什么？",["比较方案依据和组织后果","假设没有分歧","直接删除争议"],0]
+const NODES = [
+ {id:"yudu",name:"于都出发",short:"于都",date:"1934年10月",chapter:"序章 · 出发之前",lead:"夜色渐深，行装已经整理好。远处传来集合的声音，前方的路还看不清，但队伍即将出发。你跟随队伍来到于都，长征的故事从这里展开。",storyTitle:"一段漫长征途的开始",story:"这里采用第一人称教学模拟视角。你所看到的行囊、夜色和行军氛围是为了帮助理解历史而设计的场景，并非某位具体战士的真实回忆。1934年10月，中央红军主力开始战略转移，踏上长征。",fact:"中央红军主力于1934年10月从江西于都等地出发，开始长征。出发与当时中央苏区面临的严峻军事形势密切相关。",detail:"把长征理解为一次在严峻形势下进行的战略转移，有助于理解后续路线为何不断调整。中央红军的出发不是一次普通行军，而是中国革命进程中的重大转折。",source:"modstart",x:125,y:365,scene:"earth",object:"行囊与行军地图",objectText:"行囊可以作为理解行军生活的入口。具体装备会因人员、时间与任务不同而有差异；页面中的道具为示意，不代表某一位真实战士的原物。"},
+ {id:"xiangjiang",name:"血战湘江",short:"湘江",date:"1934年11月",chapter:"第一幕 · 山河阻隔",lead:"山路在前方收紧，河流横在队伍面前。地图上，队伍正在寻找突破方向。停下来看看地形与史料，便能理解这场战役为何成为长征途中极其沉重的一页。",storyTitle:"河流前的艰难抉择",story:"这段场景以地形和路线示意为主，不重现未经核实的个人对话。湘江战役发生于中央红军突破国民党军设置的第四道封锁线过程中，红军付出了重大损失，也促使人们反思此前军事指挥中的问题。",fact:"湘江战役发生于1934年11月。中央红军强渡湘江、突破封锁线，付出了重大牺牲。不同资料对兵力和伤亡统计口径存在差异，引用具体数字时应注明来源与统计范围。",detail:"理解湘江战役，不应只记住一个数字。它既反映了当时军事形势的严峻，也成为理解随后通道转兵、黎平会议和遵义会议背景的重要环节。",source:"moe",x:210,y:300,scene:"river",object:"河流与路线",objectText:"点击地图可以观察路线方向。此处河流与地形是概念性示意，不能当作战役的精确军事地图。"},
+ {id:"tongdao",name:"通道·黎平",short:"通道黎平",date:"1934年12月",chapter:"第二幕 · 寻找方向",lead:"山路纵横，行军方向开始发生变化。此刻最值得关注的不是某一个孤立事件，而是队伍如何在复杂形势中重新考虑前进方向。",storyTitle:"在困局中寻找出路",story:"长征并不是沿着一条预先画好的直线前进。通道转兵和黎平会议等历史节点，体现了红军在危急形势下对行动方向进行调整。页面用路线动画表现“方向变化”，并不模拟真实作战指令。",fact:"1934年12月，中央红军在通道、黎平等地的行动与会议，影响了后续行军方向，为转向贵州及遵义会议的召开提供了历史背景。",detail:"阅读这一阶段时，可以把目光放在决策如何形成、军事形势如何变化，以及红军如何在实践中调整行动。具体会议的时间、地点与内容，应以权威史料为准。",source:"moe",x:280,y:242,scene:"mountain",object:"路线转折",objectText:"地图中的转折点用于帮助理解行军方向变化。它是学习示意，不代表完整的军事部署或逐日行军轨迹。"},
+ {id:"zunyi",name:"遵义会议",short:"遵义",date:"1935年1月",chapter:"第三幕 · 历史转折",lead:"行军暂时停下。这里不需要急着记结论，先看看会议发生的背景、相关人物与史料，再理解为什么遵义会议在中国革命历史上具有重要意义。",storyTitle:"在历史转折处停下脚步",story:"场景中的室内光线和桌椅为氛围设计，不代表会议现场的精确复原。遵义会议是中共中央政治局于1935年1月在贵州遵义召开的一次重要会议，对纠正军事指挥上的错误、确立正确领导具有重要意义。",fact:"遵义会议于1935年1月召开，是中国共产党历史上具有重要转折意义的会议。其历史意义应结合会议背景、军事指挥调整及长征后续发展理解。",detail:"遵义会议的意义不应简化成一句口号。它与此前湘江战役后的严峻形势相联系，也影响了红军此后在军事指挥和战略行动上的变化。",source:"moe",x:342,y:220,scene:"room",object:"会议文献",objectText:"页面中的文件造型为界面道具，不是历史文献的原件复制。查看史实摘要和来源页面，可进一步核对会议的时间、地点与历史意义。"},
+ {id:"zhaxi",name:"扎西·苟坝·会理",short:"扎西等地",date:"1935年初夏前",chapter:"第四幕 · 在行动中调整",lead:"路线继续延伸，队伍在山地间移动。历史并非只有一个被纪念的瞬间，还包含许多在行动中不断调整、判断与前进的过程。",storyTitle:"决策发生在行军途中",story:"这一章节把多个重要地点作为一组学习节点，帮助用户理解长征早期的军事行动与决策变化。具体会议和行动并非同一天发生；页面不把它们压缩成一个虚构的单一事件。",fact:"扎西、苟坝、会理等地关联着红军长征期间不同阶段的会议、行动和军事指挥调整。学习时应分别核对具体事件的时间和内容。",detail:"将这些地点放在连续路线中探索，可以看到战略调整不是一次会议后就全部完成，而是在复杂的军事行动中逐步展开。",source:"modmore",x:398,y:184,scene:"earth",object:"行军日志",objectText:"日志图标是学习入口。没有明确来源的第一人称日记不会被当作真实史料展示。"},
+ {id:"chishui",name:"四渡赤水",short:"赤水",date:"1935年1—3月",chapter:"第五幕 · 山河之间的机动",lead:"河流与山地把路线切成不同方向。点击地图观察行动阶段的变化，再打开背景讲述，你会发现这段历史的关键不只是“渡河”，更是如何在运动中争取主动。",storyTitle:"在地图上读懂行动",story:"本场景的路线动画是教学示意，不等同于逐日作战地图。四渡赤水是中央红军长征途中一系列重要军事行动，体现了在复杂形势下灵活机动、寻找战机的特点。",fact:"四渡赤水战役发生于1935年初，是中央红军长征途中重要的军事行动。理解其过程，需要结合当时敌我态势、地形条件和连续行动，而不能只看单一渡河节点。",detail:"互动地图将以阶段式方式呈现方向变化。用户可以点击阶段标记查看简短解释；这里不设置对错题，也不允许用户选择改写真实历史结果。",source:"modmore",x:454,y:204,scene:"river",object:"河流与行动方向",objectText:"你可以把地图当作分析工具：观察河流、山地和路线变化如何影响行动。线条仅为概念示意。"},
+ {id:"jinsha",name:"巧渡金沙江",short:"金沙江",date:"1935年5月",chapter:"第六幕 · 越过天险",lead:"江面宽阔，山势逼近。地图将视线引向北方。这里可以通过地形、渡江背景和行动结果，理解红军如何摆脱部分追堵力量，继续推进长征。",storyTitle:"越过一道重要天险",story:"场景中的江水与山形为氛围设计。巧渡金沙江是中央红军长征中的重要行动，帮助红军摆脱了国民党军的围追堵截，为后续行动创造了条件。",fact:"1935年5月，中央红军渡过金沙江，摆脱了国民党军的围追堵截。具体行动过程应结合权威军事史料阅读。",detail:"与四渡赤水连起来看，能更好理解红军通过机动、转向和渡江来改变战略态势，而不是简单地沿地图直线前进。",source:"modmore",x:502,y:140,scene:"river",object:"江面与渡江",objectText:"河流画面不是历史影像。真实渡江过程可通过来源清单中的权威史料进一步了解。"},
+ {id:"luding",name:"大渡河·泸定桥",short:"泸定桥",date:"1935年5月",chapter:"第七幕 · 桥与急流",lead:"急流从峡谷间穿过，一座桥连接两岸。停在这里，观察桥梁与河谷的空间关系，再阅读事件背景，理解飞夺泸定桥为何成为长征记忆中广为人知的历史节点。",storyTitle:"一座桥上的历史记忆",story:"页面以桥梁轮廓和峡谷光影营造环境，不模拟具体战斗过程，也不把影视作品中的戏剧化细节当作史实。飞夺泸定桥发生于1935年5月，是红军长征中的重要事件。",fact:"1935年5月，红军夺取泸定桥，为中央红军继续北上创造了条件。事件的具体经过、参与部队和相关细节应以权威史料为依据。",detail:"这段历史常被艺术作品呈现。学习时可区分经史料支持的行动事实与影视化表达，既理解其历史意义，也保持对证据的尊重。",source:"modmore",x:552,y:200,scene:"bridge",object:"桥梁结构",objectText:"此处的桥是抽象的场景图形。它帮助观察地形和通行条件，不是泸定桥的精确复刻。"},
+ {id:"snow",name:"翻越夹金山",short:"夹金山",date:"1935年6月",chapter:"第八幕 · 雪线之上",lead:"山脊隐入云雾，路面越来越窄。这里不需要夸张的效果，只要看清高海拔、寒冷与地形对行军造成的困难，就能感受到长征不仅是军事行动，也是严酷环境中的跋涉。",storyTitle:"走向雪线",story:"雪山场景属于教学模拟。它不声称复原某一天的真实天气或某位战士的个人体验。红军翻越雪山时面临高寒、缺氧、道路艰险和补给困难等挑战。",fact:"长征途中，红军翻越多座高山雪岭。夹金山是红军长征中具有代表性的雪山之一，翻越过程体现了严酷自然环境带来的挑战。",detail:"观察地形、衣物、补给和队伍行进方式，可以帮助理解自然环境如何影响行军节奏与人员状态。具体细节应以相关史料与纪念馆资料为准。",source:"modmore",x:552,y:286,scene:"snow",object:"雪山与装备",objectText:"装备图形仅为示意。网站不会虚构具体个人的冻伤、死亡或对话细节来制造情绪效果。"},
+ {id:"maogong",name:"懋功会师",short:"懋功",date:"1935年6月",chapter:"第九幕 · 队伍相逢",lead:"翻越雪山之后，路线来到新的汇合点。两支队伍相遇不仅是旅程中的一个场景，也是理解红军力量会合、长征路线变化和后续发展的一把钥匙。",storyTitle:"在路上相逢",story:"场景用逐渐靠近的路线表现会合概念，不重现未经证实的个人对白。1935年，中央红军与红四方面军在四川懋功地区会师，成为长征进程中的重要节点。",fact:"1935年6月，中央红军与红四方面军在四川懋功地区会师。会师后的形势、战略方针和队伍行动仍经历复杂变化。",detail:"会师意味着力量汇合，但不意味着后续道路从此没有分歧或困难。结合后续草地行军与北上路线，才能理解这一节点的完整历史背景。",source:"modmore",x:492,y:338,scene:"earth",object:"会师路线",objectText:"路线汇合为概念图形，不能当作精确到日的会师行军路线。"},
+ {id:"grassland",name:"草地·北上",short:"草地",date:"1935年夏秋",chapter:"第十幕 · 草地行军",lead:"天地变得开阔，脚下却并不平坦。草地、沼泽、天气与补给让前进变得困难。你可以查看环境与行军条件，了解红军为何必须在艰难中继续北上。",storyTitle:"艰难环境中的坚持",story:"草地场景是对自然环境的教学表达，并非某次具体行军的现场复原。长征途中，红军穿越草地面临沼泽、寒冷、食物短缺和道路难辨等困难。",fact:"红军长征穿越草地的过程艰苦。地形、气候与补给条件都给队伍带来严峻挑战，相关记载可从权威党史、军史及纪念馆资料中进一步核查。",detail:"不把困难简单化成传奇故事，而是从环境、补给、队伍组织和历史背景理解坚持北上的代价，更能尊重真实历史。",source:"modmore",x:460,y:368,scene:"grass",object:"草地地貌",objectText:"地面色彩与雾气是氛围设计。页面不会把模拟天气标注为真实历史气象记录。"},
+ {id:"shanbei",name:"陕北落脚",short:"陕北",date:"1935年10月",chapter:"第十一幕 · 继续前行",lead:"长路仍在延伸，但队伍终于来到新的落脚区域。回看地图，之前经历的河流、山脉与转折不再是孤立场景，而连成了一段战略转移的历史过程。",storyTitle:"长征进程中的重要落脚点",story:"陕北落脚是中央红军长征进程中的重要节点。长征并非所有队伍在同一天抵达同一地点，不同部队的行程、会合时间与路线各有区别。",fact:"1935年10月，中央红军到达陕北吴起镇一带，标志着中央红军长征取得重要阶段性成果。其他红军部队的长征进程与会师时间有所不同。",detail:"理解中央红军到达陕北与1936年三大主力会师的区别，可以避免把长征的不同阶段混为一谈。",source:"modmore",x:430,y:382,scene:"earth",object:"路线终点与新起点",objectText:"地图中的北上方向是示意。长征的结束与后续发展需要结合各支红军队伍的不同路线理解。"},
+ {id:"reunion",name:"三大主力会师",short:"会师",date:"1936年10月",chapter:"终章 · 山河作证",lead:"旅程来到会师节点。地图上，分开的路线终于汇聚。你可以回看沿途场景，也可以打开史料档案，重新理解这段跨越多地、历时数年的战略转移。",storyTitle:"旅程的回望",story:"会师场景是对历史节点的象征性表达，不是具体会师现场的复刻。1936年10月，红军三大主力会师，标志着长征胜利结束。",fact:"1936年10月，红一、红二、红四方面军在甘肃会宁、宁夏西吉将台堡等地实现会师，标志着红军长征胜利结束。",detail:"长征不是单一队伍沿单一路线完成的一次行军。中央红军、红二方面军、红四方面军的路线与会合过程各有特点，三大主力会师是理解长征整体进程的重要节点。",source:"modreunion",x:430,y:382,scene:"dawn",object:"完整路线档案",objectText:"旅程档案会记录你在网站中访问过的节点与已打开的资料，不代表历史人物的真实行军记录。"}
 ];
-function chapter(){
-let c=C[S.i],e=events[S.i%4],done=S.done.includes(S.i);
-document.getElementById("view").innerHTML=`<div class="meta">MISSION ${S.i+1}/13 · ${c[1]} · ${c[2]}</div><h2>${c[0]}</h2><div class="story"><p><b>第一视角：</b>我把地图压在膝盖上。此刻没有“后来人”的答案，只有眼前的道路、情报、时间和队伍。</p><p>${c[4]}</p><p><b>本关问题：</b>${c[3]}</p><p>⚠️ 第一人称文字是教学情境创作；下面的选择题属于课堂推演，不代表真实历史中存在的另一条结果。</p></div>
-<div class="timeline"><div class="time"><b>时间</b><span>${c[1]}</span></div><div class="time"><b>历史主题</b><span>${c[2]}</span></div><div class="time"><b>学习动作</b><span>看地图 → 查史料 → 做判断 → 复盘</span></div></div>
-<div class="cards"><div class="card"><span class="badge">史料室</span><h3>先证据，后结论</h3><p>历史学习不能让游戏机制替代史实。打开资料来源，查看本课程使用的公开资料。</p><button class="choice" onclick="sources()">打开资料库</button></div><div class="card"><span class="badge">视觉档案</span><h3>看见长征</h3><p>中国国家博物馆2026年长征主题展将油画、版画、连环画与数字艺术结合，强调“看得见的长征”。</p><button class="choice" onclick="gallery()">打开视觉档案</button></div></div>
-<div class="event"><h3>🎮 历史思维事件：${e[0]}</h3><p>${e[1]}</p>${e[2].map((x,j)=>`<button class="choice" onclick="choose(${j})">${String.fromCharCode(65+j)}. ${x}</button>`).join("")}<div id="res"></div></div>
-<div class="card" style="margin-top:12px"><span class="badge">通关</span><p>完成一次历史推演即可获得本关评价；完成本关后解锁下一节点。</p><button class="choice" onclick="complete()">完成任务 →</button></div>`;
+const SOURCES = {
+ modstart:{label:"国防部：中央红军长征出发相关资料",url:"https://www.mod.gov.cn/gfbw/sy/tt_214026/4842175.html"},
+ moe:{label:"教育部：遵义会议及长征相关专题资料",url:"https://www.moe.gov.cn/jyb_xwfb/moe_2082/2021/2021_zl26/zunyihuiyi/202105/t20210506_529913.html"},
+ modmore:{label:"国防部：长征相关军事史资料",url:"https://www.mod.gov.cn/gfbw/gfjy_index/js_214151/16418521.html"},
+ modreunion:{label:"国防部：红军三大主力会师相关资料",url:"https://www.mod.gov.cn/gfbw/tp_214132/tsjs/4878949.html"}
+};
+const ARCHIVE = [
+ {type:"历史脉络",title:"长征为什么开始？",desc:"从当时的军事形势与战略转移背景理解长征的起点。",node:0,body:"中央红军开始长征，与中央苏区面临的严峻军事形势密切相关。长征是一次战略转移，后续路线也随着军事态势不断变化。",source:"modstart"},
+ {type:"关键事件",title:"湘江战役",desc:"理解突破封锁线的艰难与沉重代价。",node:1,body:"湘江战役发生于1934年11月。不同资料的伤亡数字可能存在统计口径差异，因此引用具体数字时应核对来源、时间范围与统计方式。",source:"moe"},
+ {type:"历史转折",title:"遵义会议",desc:"从会议背景与后续发展理解其历史意义。",node:3,body:"遵义会议于1935年1月召开，在中国共产党历史上具有重要转折意义。理解其意义，需要联系此前军事形势及后续指挥与战略行动的变化。",source:"moe"},
+ {type:"军事行动",title:"四渡赤水",desc:"通过路线变化理解机动与争取主动。",node:5,body:"四渡赤水不是孤立的四次渡河，而是中央红军在复杂形势下进行的一系列军事行动。地图演示是概念示意，不能替代逐日军事地图。",source:"modmore"},
+ {type:"重要行动",title:"巧渡金沙江",desc:"了解渡江行动如何改变战略态势。",node:6,body:"1935年5月，中央红军渡过金沙江，摆脱国民党军的围追堵截，为后续行动创造条件。",source:"modmore"},
+ {type:"历史记忆",title:"泸定桥",desc:"区分有史料依据的事件与艺术化再现。",node:7,body:"飞夺泸定桥是长征中广为人知的历史事件。影视作品中的场景、对白和细节不能自动视为史实，应优先核对权威史料。",source:"modmore"},
+ {type:"艰难行军",title:"雪山与草地",desc:"从地形、气候与补给理解行军挑战。",node:8,body:"雪山与草地的自然环境给红军行军带来严峻挑战。学习时应关注环境、补给、组织和路线，而不把未经核实的个人故事当作真实记录。",source:"modmore"},
+ {type:"历史进程",title:"三大主力会师",desc:"理解不同红军队伍的路线与会合。",node:12,body:"1936年10月，红军三大主力会师，标志着长征胜利结束。不同部队的路线、时间和会合地点各有特点。",source:"modreunion"},
+ {type:"学习方法",title:"史实与情境模拟",desc:"为什么网站要区分史实、史料与创作叙事？",node:0,body:"为了帮助理解历史，互动体验会使用环境、镜头和第一人称视角，但这些表现不等于真实历史录音、真实日记或具体人物的原话。涉及具体事实时应给出可靠来源。",source:"moe"}
+];
+const SAVE_KEY = "changzheng12_progress";
+let state = {current:0, visited:[], viewedArchive:[], sound:false};
+try { const saved=JSON.parse(localStorage.getItem(SAVE_KEY)||"null"); if(saved&&Array.isArray(saved.visited)){state={...state,...saved};} } catch(e){}
+const $ = id => document.getElementById(id);
+function save(){try{localStorage.setItem(SAVE_KEY,JSON.stringify(state));}catch(e){} updateProgress();}
+function toast(msg){const t=$("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove("show"),2300);}
+function setView(id){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===id));window.scrollTo({top:0,behavior:"smooth"});}
+function visited(idx){return state.visited.includes(idx);}
+function addVisited(idx){if(!visited(idx))state.visited.push(idx);state.current=idx;save();}
+function updateProgress(){
+ const n=state.visited.length,p=Math.round(n/NODES.length*100);
+ $("progressText").textContent=p+"%";$("progressFill").style.width=p+"%";$("mapVisited").textContent=`已探索 ${n} / ${NODES.length}`;
+ $("resumeBtn").textContent=n?`继续上次旅程（已探索 ${n} 处）`:"继续上次旅程";
+ const node=NODES[state.current]||NODES[0], next=NODES[Math.min(state.current+1,NODES.length-1)];
+ $("currentTitle").textContent=node.name;$("currentSummary").textContent=node.fact;
+ $("nextTitle").textContent=state.current===NODES.length-1?"回看完整旅程":next.name;
+ $("nextSummary").textContent=state.current===NODES.length-1?"你已经走到旅程终章。可以回顾路线，或打开沿途史料档案。":next.lead;
+ $("enterSceneBtn").textContent=visited(state.current)?"返回当前场景　→":"进入当前场景　→";
+ renderMap();
 }
-function choose(j){let correct=events[S.i%4][2].length===3?(S.i%4===0?1:0):0;let r=document.getElementById("res");if(j===correct){r.innerHTML="<div class='result' style='color:#297649'>✓ 这个选择更符合历史分析方法。+20 XP，士气+3。</div>";S.xp+=20;S.morale=Math.min(100,S.morale+3)}else{r.innerHTML="<div class='result' style='color:#a52626'>△ 证据还不够。尝试从时间、空间、资源和信息重新判断。</div>";S.morale=Math.max(0,S.morale-2)}stats();save()}
-function complete(){if(!S.done.includes(S.i)){S.done.push(S.i);S.xp+=30;S.food=Math.max(0,S.food-3);S.energy=Math.max(0,S.energy-1);if(S.i<C.length-1)S.u=Math.max(S.u,S.i+1);if(S.done.length>=5&&!S.ach.includes("半程"))S.ach.push("半程行军");if(S.done.length===C.length&&!S.ach.includes("全程完成"))S.ach.push("全程完成");save()}if(S.i<C.length-1)S.i++;render()}
-function sources(){document.getElementById("modal").classList.remove("hidden");document.getElementById("modalbody").innerHTML="<h2>公开资料库</h2>"+SRC.map(s=>`<p><a target="_blank" href="${s[1]}">${s[0]}</a></p>`).join("")}
-function gallery(){document.getElementById("modal").classList.remove("hidden");document.getElementById("modalbody").innerHTML=`<h2>视觉档案</h2><p>图片来自外部公开文件路径，版权和访问条件以原站为准。</p><img src="${IMG.map}" style="width:100%;border-radius:10px"><p>长征路线图</p><img src="${IMG.zunyi}" style="width:100%;border-radius:10px"><p>遵义会议会址</p><img src="${IMG.chain}" style="width:100%;border-radius:10px"><p>泸定桥铁索实物</p>`}
-function closeM(){document.getElementById("modal").classList.add("hidden")}
-function tab(id,b){["course","archive","people","exam","report","teacher"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("on"));b?.classList.add("on");if(id==="archive")archive();if(id==="people")people();if(id==="exam")exam();if(id==="report")report();if(id==="teacher")teacher()}
-function archive(){document.getElementById("archiveGrid").innerHTML=F.map(a=>`<div class="a"><b>${a[0]} · ${a[1]}</b><small>${a[2]}</small></div>`).join("")}
-function people(){document.getElementById("peopleGrid").innerHTML=P.map(p=>`<div class="card"><span class="badge">人物档案</span><h3>${p[0]}</h3><p>${p[1]}</p></div>`).join("")}
-let EX=[];
-function exam(){EX=[...Q].sort(()=>Math.random()-.5).slice(0,10);document.getElementById("examBox").innerHTML=EX.map((q,i)=>`<div class="q"><b>${i+1}. ${q[0]}</b>${q[1].map((x,j)=>`<button onclick="eq(this,${i},${j},${q[2]})">${String.fromCharCode(65+j)}. ${x}</button>`).join("")}<div id="eq${i}"></div></div>`).join("")}
-function eq(b,i,j,c){let d=document.getElementById("eq"+i);if(d.dataset.done)return;d.dataset.done=1;if(j===c){d.innerHTML="✓ 正确";d.style.color="#297649";b.style.borderColor="#297649"}else{d.innerHTML="✕ 正确答案："+String.fromCharCode(65+c);d.style.color="#a52626"}if(document.querySelectorAll("[data-done]").length===10){S.exam=[...document.querySelectorAll("[id^=eq]")].filter(x=>x.textContent==="✓ 正确").length;S.xp+=S.exam*8;save()}}
-function report(){let p=Math.round(S.done.length/C.length*100);document.getElementById("reportBox").innerHTML=`<div class="certificate"><div>大学课程设计 · 沉浸式历史课堂</div><h2>重走长征路 · 学习记录</h2><p class="gold">主线完成度 ${p}%</p><p>已完成 ${S.done.length}/${C.length} 个节点</p><p>累计 XP：${S.xp}</p><p>大考成绩：${S.exam==null?"未参加":S.exam+"/10"}</p><p>成就：${S.ach.length?S.ach.join(" · "):"继续行军解锁"}</p><p style="font-size:11px;color:#806b58">本证书为网页课程学习记录，不作为正式学历或资格证书。</p></div>`}
-function teacher(){document.getElementById("teacherBox").innerHTML=`<div class="teacherGrid"><div class="teacherBox"><b>01 · 导入 10分钟</b><span>地图投影 + “如果你没有后见之明，你会怎么走？”</span></div><div class="teacherBox"><b>02 · 主线 120—150分钟</b><span>13节点小组轮流推进，每节点完成地图、史料和推演。</span></div><div class="teacherBox"><b>03 · 史料 20—30分钟</b><span>区分史实、艺术再现、后人叙述和课堂假设。</span></div><div class="teacherBox"><b>04 · 大考 15—20分钟</b><span>随机抽题并形成个人学习记录。</span></div></div><div class="card" style="margin-top:12px"><h3>答辩时可以这样讲</h3><p>本项目不是把历史“游戏化到娱乐化”，而是让游戏机制服务于历史思维：地图负责空间认知，资源负责理解约束，事件负责理解决策，史料室负责建立证据意识，成绩单负责形成学习反馈。</p></div>`}
-function render(){stats();route();list();chapter();archive();people();report()}
-document.getElementById("close").onclick=closeM;render()
-</script></body></html>
+function renderMap(){
+ const g=$("mapPoints");g.innerHTML="";
+ NODES.forEach((n,i)=>{
+   const group=document.createElementNS("http://www.w3.org/2000/svg","g");
+   group.setAttribute("class","route-point"+(i===state.current?" selected":"")+(visited(i)?" visited":""));
+   group.setAttribute("tabindex","0");group.setAttribute("role","button");group.setAttribute("aria-label",n.name);
+   group.innerHTML=`<circle cx="${n.x}" cy="${n.y}" r="${i===state.current?7:5}"></circle><text x="${n.x+10}" y="${n.y-9}">${n.short}</text>`;
+   group.addEventListener("click",()=>selectNode(i));group.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();selectNode(i);}});
+   g.appendChild(group);
+ });
+}
+function selectNode(i){state.current=i;save();updateProgress();toast(`已选择：${NODES[i].name}`);}
+function renderScene(){
+ const n=NODES[state.current];addVisited(state.current);
+ $("sceneNumber").textContent=`${String(state.current+1).padStart(2,"0")} / ${String(NODES.length).padStart(2,"0")} · ${n.chapter}`;
+ $("sceneTitle").textContent=n.name;$("sceneLead").textContent=n.lead;$("storyTitle").textContent=n.storyTitle;$("storyText").textContent=n.story;
+ $("sceneFooterRight").textContent=`探索地点 ${state.current+1} / ${NODES.length} · 已访问 ${state.visited.length} 处`;
+ $("continueBtn").textContent=state.current===NODES.length-1?"回望整段旅程　↗":"继续前行　→";
+ const b=$("sceneBackdrop");
+ const looks={earth:"radial-gradient(ellipse at 68% 30%,#936447 0%,#51362a 34%,#171310 78%)",river:"radial-gradient(ellipse at 62% 38%,#52706c 0%,#3d3028 35%,#171310 78%)",mountain:"radial-gradient(ellipse at 65% 25%,#9b6d4c 0%,#493127 35%,#171310 78%)",room:"radial-gradient(ellipse at 54% 20%,#8c6845 0%,#463125 30%,#171310 78%)",bridge:"radial-gradient(ellipse at 65% 35%,#626b65 0%,#443229 36%,#171310 78%)",snow:"radial-gradient(ellipse at 65% 28%,#a7aaa3 0%,#5d5b54 32%,#171310 78%)",grass:"radial-gradient(ellipse at 60% 35%,#85846b 0%,#484436 34%,#171310 78%)",dawn:"radial-gradient(ellipse at 62% 25%,#bd7a4c 0%,#5b3829 36%,#171310 78%)"};
+ b.style.background=looks[n.scene]||looks.earth;
+ setView("sceneView");
+}
+function openModal(kind){
+ const n=NODES[state.current];let title="",kicker="",content="",tabs=true;
+ $("modalTabs").classList.toggle("hide",kind==="object");
+ if(kind==="facts"){kicker="历史背景 · VERIFIED CONTEXT";title=n.name+"｜历史背景";content=`<p>${n.fact}</p><div class="fact"><p>${n.detail}</p></div><p><b>学习提示：</b>涉及具体日期、人物、兵力与伤亡数字时，应以可核查的权威史料为准；不同来源的统计口径可能不同。</p>`;}
+ else if(kind==="object"){kicker="现场观察 · SIMULATED SCENE";title=n.object;content=`<p>${n.objectText}</p><div class="fact"><p>当前画面、镜头氛围和互动道具属于教学模拟，用于帮助观察历史背景；它们不是对某一真实现场的精确复原。</p></div>`;}
+ else if(kind==="archive"){kicker="沿途史料 · ARCHIVE";title=n.name+"｜相关史料";const s=SOURCES[n.source]||SOURCES.modmore;content=`<p>${n.fact}</p><div class="fact"><p>${s.label}</p><p><a href="${s.url}" target="_blank" rel="noopener">打开权威资料来源 ↗</a></p></div><p>网页内的概括性说明用于引导阅读。打开来源页面后，请以原始发布机构的完整内容为准。</p>`;}
+ else {kicker="沿途讲述 · FIELD NOTES";title=n.storyTitle;content=`<p>${n.story}</p><div class="fact"><p><b>历史事实</b><br>${n.fact}</p></div><p><b>情境模拟说明：</b>第一人称感受、环境氛围和部分叙事语言是为学习设计的模拟，不代表某位具体历史人物的真实日记、原话或录音。</p>`;}
+ $("modalKicker").textContent=kicker;$("modalTitle").textContent=title;$("modalContent").innerHTML=content;$("modalBackdrop").classList.add("open");
+}
+function closeModal(){$("modalBackdrop").classList.remove("open");}
+function showArchive(){
+ const g=$("archiveGrid");g.innerHTML="";
+ ARCHIVE.forEach((a,i)=>{const el=document.createElement("article");el.className="archive-card";el.innerHTML=`<div class="panel-kicker">${a.type}</div><h3>${a.title}</h3><p>${a.desc}</p><button type="button">打开档案 ↗</button>`;el.querySelector("button").addEventListener("click",()=>{state.current=a.node;save();const s=SOURCES[a.source]||SOURCES.modmore;$("modalKicker").textContent="沿途史料档案";$("modalTitle").textContent=a.title;$("modalTabs").classList.add("hide");$("modalContent").innerHTML=`<p>${a.body}</p><div class="fact"><p>${s.label}</p><p><a href="${s.url}" target="_blank" rel="noopener">打开参考来源 ↗</a></p></div><p>以上为便于探索的摘要，具体史实以来源页面原文为准。</p>`;$("modalBackdrop").classList.add("open");state.viewedArchive.push(i);save();});g.appendChild(el);});
+ setView("archiveView");
+}
+$("startBtn").addEventListener("click",()=>{state.current=0;renderScene();});
+$("resumeBtn").addEventListener("click",()=>{renderScene();});
+$("enterSceneBtn").addEventListener("click",()=>renderScene());
+$("continueBtn").addEventListener("click",()=>{if(state.current<NODES.length-1){state.current++;renderScene();}else{setView("homeView");$("journeySection").scrollIntoView({behavior:"smooth"});toast("旅程已记录。你可以从地图重访任意地点。");}});
+$("mapTopBtn").addEventListener("click",()=>{setView("homeView");setTimeout(()=>$("journeySection").scrollIntoView({behavior:"smooth"}),80);});
+$("mapSceneBtn").addEventListener("click",()=>{setView("homeView");setTimeout(()=>$("journeySection").scrollIntoView({behavior:"smooth"}),80);});
+$("backHomeBtn").addEventListener("click",()=>{setView("homeView");updateProgress();});
+$("archiveTopBtn").addEventListener("click",showArchive);$("archiveBtn").addEventListener("click",()=>openModal("archive"));$("factsBtn").addEventListener("click",()=>openModal("facts"));$("objectBtn").addEventListener("click",()=>openModal("object"));
+$("archiveBackBtn").addEventListener("click",()=>setView("homeView"));
+$("modalClose").addEventListener("click",closeModal);$("modalBackdrop").addEventListener("click",e=>{if(e.target===$("modalBackdrop"))closeModal();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
+$("modalTabs").addEventListener("click",e=>{if(e.target.matches("button[data-tab]")){document.querySelectorAll("#modalTabs button").forEach(b=>b.classList.toggle("active",b===e.target));const kind=e.target.dataset.tab;openModal(kind==="fact"?"facts":kind==="sources"?"archive":"story");}});
+$("soundBtn").addEventListener("click",()=>{state.sound=!state.sound;$("soundBtn").textContent=state.sound?"♫ 开":"♫";toast(state.sound?"环境音效已开启：当前版本使用静音氛围，不播放未经授权的音频。":"环境音效已关闭");});
+updateProgress();showArchiveCardsInitial();
+function showArchiveCardsInitial(){/* Archive cards are rendered when the archive is opened. */}
+</script>
+</body>
+</html>
